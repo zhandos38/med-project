@@ -1,5 +1,5 @@
 <?php
-namespace frontend\models;
+namespace backend\forms;
 
 use Yii;
 use yii\base\Model;
@@ -41,8 +41,8 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
 
-            [['full_name', 'address'], 'string'],
-            [['status', 'role'], 'integer']
+            [['full_name', 'address', 'role'], 'string'],
+            [['status'], 'integer']
         ];
     }
 
@@ -77,6 +77,8 @@ class SignupForm extends Model
         $user->full_name = $this->full_name;
         $user->address = $this->address;
         $user->phone = $this->phone;
+        $user->status = $this->status;
+        $user->role = $this->role;
         return $user->save();
 
     }

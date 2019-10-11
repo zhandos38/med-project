@@ -9,5 +9,11 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'authManager' => [
+            'class' => 'common\components\rbac\AuthManager',
+            'itemFile' => '@common/components/rbac/items/items.php',
+            'assignmentFile' => '@common/components/rbac/items/assignments.php',
+            'ruleFile' => '@common/components/rbac/items/rules.php',
+        ],
     ],
 ];
