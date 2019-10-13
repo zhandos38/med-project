@@ -1,0 +1,407 @@
+.navbar-brand_img {
+  width: 110px;
+  position: absolute;
+  top: -56px;
+}
+
+.header-search {
+  display: flex;
+  width: 80%;
+  margin-left: 132px;
+}
+
+.container.header-container {
+  padding: 10px 10px;
+}
+
+.container.header-container {
+  display: flex;
+}
+
+.col.header-column {
+  background-color: #33b5e5;
+}
+
+.header__search-icon {
+  font-size: larger;
+  color: #fff;
+  padding: 8px;
+}
+
+.slider__description {
+  /*background-color: #0099CC;*/
+  /*opacity: 0.8;*/
+  width: 100%;
+  height: 100%;
+  background: #009cbf url(../../img//combined-shape.svg) no-repeat right top;
+  /*height: 500px;*/
+  padding: 60px 60px 40px;
+}
+
+.slider__carousel-wrapper {
+  padding: 0;
+}
+
+.slider__description-wrapper {
+  padding: 0;
+}
+
+.slider__carousel {
+  /*border-radius: 0;*/
+}
+
+.nav.navbar-nav.ml-auto {
+}
+
+.navbar-column {
+  /*padding-left: 18px;*/
+}
+
+.navbar-light .navbar-nav .nav-link {
+  padding: 5px;
+}
+
+.header-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.header-login-btn {
+  margin-left: 10px;
+}
+
+.posts__item-btn-group {
+  margin-top: 10px;
+}
+
+.team__item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  padding: 0 6px;
+}
+
+.rounded-circle.team__item-img {
+  max-width: 136px;
+  border: 8px solid rgb(0,156,191);
+}
+
+.team__item {
+  text-align: center;
+  width: 160px;
+}
+
+.team-about__block {
+  background: linear-gradient(0deg,rgba(51,181,229,0.8),rgba(51,181,229,0.89)), url('../../img/ornament.png');
+  background-repeat: round;
+  color: #fff;
+}
+
+.row.team-about__row {
+  padding: 55px 0;
+}
+
+.team__item-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.about__description {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.about__button {
+  margin-top: 16px;
+  border-radius: 35px;
+  border-width: 2px;
+  font-size: 14px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.about__button {
+  border: 1px solid transparent;
+  padding: 15px 35px;
+  font-weight: bold;
+  border-radius: 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-color: #fff;
+  border-width: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.about__button:hover {
+  background-color: #fff;
+  color: #000;
+  text-decoration: initial;
+}
+
+@media (max-width: 768px) {
+  .header-search {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-buttons {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand_img {
+    width: 72px;
+    top: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team__item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-about__block {
+    background-repeat: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__column {
+    padding-top: 55px;
+  }
+}
+
+.photo-heading {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 14px;
+}
+
+.photo-text {
+  padding-top: 5px;
+}
+
+.photo-author {
+  font-size: 14px;
+  color: #009cbf;
+}
+
+.news__item {
+  padding: 20px 15px;
+  margin-top: 20px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+}
+
+.news__icon {
+  padding-right: 5px;
+}
+
+.news__heading {
+  display: flex;
+  font-size: 14px;
+  color: #3a3a3a;
+  justify-content: space-between;
+}
+
+.news__text {
+  padding-top: 10px;
+}
+
+.news__item-wrapper {
+  color: #465765;
+}
+
+.news__item-wrapper:hover {
+  text-decoration: none;
+}
+
+.news__date-icon {
+  padding-right: 5px;
+}
+
+.news__pagination {
+  margin-top: 20px;
+}
+
+.slider__header {
+  color: #fff;
+}
+
+.slider__text {
+  color: #fff;
+  padding-top: 10px;
+}
+
+.slider__button {
+  border: 1px solid transparent;
+  padding: 15px 35px;
+  font-weight: bold;
+  border-radius: 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-color: #fff;
+  border-width: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.slider__button-wrapper {
+  padding-top: 20px;
+}
+
+.aside-event__item-box {
+  padding: 20px;
+  background-color: #009cbf;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.aside-event__item {
+  color: #000;
+}
+
+.aside-event__date {
+  color: #fff;
+  padding: 0 0 10px 0;
+}
+
+.aside-event__text {
+  font-weight: 600;
+}
+
+.aside-event__item {
+  color: #fff;
+}
+
+.aside-event__item-wrapper {
+  margin-top: 20px;
+}
+
+.expert-opinion {
+  margin-top: 20px;
+}
+
+.expert-opinion__box {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../../img/expert-opinion.jpg);
+  color: #fff;
+}
+
+.expert-opinion__title {
+  font-size: 14px;
+  padding-top: 10px;
+  background-color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+}
+
+.about__img {
+  width: 200px;
+}
+
+.about__profile {
+  width: 200px;
+  float: left;
+  margin: 0 26px 0 0;
+  text-align: center;
+}
+
+.about__content {
+  text-align: justify;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-size: 15.5px;
+}
+
+@media (max-width: 768px) {
+  .about__profile {
+    width: 100%;
+  }
+}
+
+.col.col-lg-8 {
+}
+
+.news__img-wrapper {
+  padding-right: 0;
+}
+
+@media (max-width: 768px) {
+  .news__img-wrapper {
+    padding-right: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.clinic-cases__item {
+  padding: 20px 15px;
+  margin-top: 20px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+}
+
+.clinic-cases__text {
+  padding-top: 10px;
+}
+
+.clinic-cases__heading {
+  font-size: 14px;
+  color: #3a3a3a;
+}
+
+.clinic-cases__item-link {
+  color: #465765;
+}
+
+.contacts__item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.contacts__item {
+  width: 100%;
+}
+
+.contacts__item {
+  text-align: center;
+  width: 160px;
+}
+
+.contacts__item-title {
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.contacts__email {
+  display: flex;
+}
+
+.contacts__email-icon {
+  padding-right: 8px;
+  font-size: 18px;
+  padding-top: 4px;
+}
+
+.col.contacts__form {
+  margin-top: 40px;
+}

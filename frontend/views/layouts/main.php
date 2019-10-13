@@ -7,10 +7,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
+use frontend\assets\IndexAsset;
 use common\widgets\Alert;
 
-AppAsset::register($this);
+IndexAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -26,56 +26,152 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'Cash Project',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+<div>
+    <header class="header">
+        <div class="row">
+            <div class="col header-column">
+                <div class="container header-container">
+                    <div class="header-search"><input class="d-xl-flex navbar-search__input form-control" type="search" placeholder="Пойск по сайту"><i class="fa fa-search header__search-icon"></i></div>
+                    <div class="header-buttons"><button class="btn btn-light" type="button">Вступить в общество</button><button class="btn btn-light header-login-btn" type="button">Войти</button></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#"><img class="navbar-brand_img" loading="lazy" src="img/logo.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                    class="collapse navbar-collapse navbar-column" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Общество</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="#">Об обществе</a>
+                            <a class="dropdown-item" role="presentation" href="#">Устав</a>
+                            <a class="dropdown-item" role="presentation" href="#">История</a>
+                            <a class="dropdown-item" role="presentation" href="#">Документы</a>
+                            <a class="dropdown-item" role="presentation" href="#">Правление</a>
+                            <a class="dropdown-item" role="presentation" href="#">Члены общества</a>
+                            <a class="dropdown-item" role="presentation" href="#">География общество</a>
+                            <a class="dropdown-item" role="presentation" href="#">Новости</a>
+                            <a class="dropdown-item" role="presentation" href="#">Медицинские партнеры</a>
+                            <a class="dropdown-item" role="presentation" href="#">Ветеранский совет</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Мероприятия</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="#">First Item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Second Item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                        </div>
+                    </li>
+                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Наука и практика</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </li>
+                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Правовая информация</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </li>
+                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Специалистам</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Пациентам</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Контакты</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div style="text-align: center;">
+        <div class="row">
+            <div class="col">
+                <div class="text-left" style="font-size: 17px;margin: 20px 0;">
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ]) ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+<?= Alert::widget() ?>
+<?= $content ?>
+        </div>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+        <div class="col col-lg-4">
+            <div class="aside-event">
+                <h2 class="aside-event__header">Мероприятия<br></h2>
+                <div class="aside-event__item-wrapper">
+                    <a class="aside-event__item" href="#">
+                        <div class="aside-event__item-box">
+                            <div class="aside-event__date"><span>03 — 04 Октября 2019<br></span></div>
+                            <p class="aside-event__text">Вебинар "Эндоваскулярное лечение сложных хронических окклюзий коронарных артерий. Мастер-класс с прямой трансляцией из операционной"<br></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="aside-event__item-wrapper">
+                    <a class="aside-event__item" href="#">
+                        <div class="aside-event__item-box">
+                            <div class="aside-event__date"><span>03 — 04 Октября 2019<br></span></div>
+                            <p class="aside-event__text">Вебинар "Эндоваскулярное лечение сложных хронических окклюзий коронарных артерий. Мастер-класс с прямой трансляцией из операционной"<br></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="aside-event"></div>
+            </div>
+            <div class="expert-opinion">
+                <h2 class="expert-opinion__header"><strong>Экспертные мнения</strong><br></h2>
+                <div class="expert-opinion__item"><a class="expert-opinion__link-wrapper" href="#"></a>
+                    <div class="expert-opinion__box">
+                        <div><span>Лечение артериовенозной мальформации<br></span></div>
+                        <div class="expert-opinion__title">
+                            <p>Современный вектор эндоваскулярного лечения острого периода разрыва артериовенозной мальформации.<br></p>
+                        </div>
+                        <div><span>Гегенава Б. Б.<br></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+<div class="footer-clean">
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Legacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>Careers</h3>
+                    <ul>
+                        <li><a href="#">Job openings</a></li>
+                        <li><a href="#">Employee success</a></li>
+                        <li><a href="#">Benefits</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                    <p class="copyright">Company Name © 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 
 <?php $this->endBody() ?>
 </body>

@@ -3,9 +3,12 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use common\models\Post;
+
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\search\PostSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model \common\models\Post */
 
 $this->title = 'Посты';
 $this->params['breadcrumbs'][] = $this->title;
@@ -28,10 +31,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'title',
-            'content:ntext',
+            [
+                'attribute' => 'content',
+                'format' => 'html',
+            ],
             'views',
             'user_id',
-            //'type_id',
+            [
+                'attribute' => 'type_id',
+                'value' => function(Post $model) {
+                    return $model->getTypeLabel();
+                }
+            ],
             //'created_at',
             //'updated_at',
 

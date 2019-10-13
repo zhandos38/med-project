@@ -1,0 +1,30 @@
+a {
+  border: none;
+}
+
+* {
+  outline: none;
+}
+
+.text-center.blog__title {
+  padding: 55px 0;
+}
+
+.card-comments-count {
+  padding-left: 5px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.customer-logos {
+  margin-top: 30px;
+}
+
+.container.projects-horizontal__container {
+  padding-bottom: 55px;
+}
+

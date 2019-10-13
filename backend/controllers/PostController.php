@@ -2,12 +2,15 @@
 
 namespace backend\controllers;
 
+use backend\forms\PostForm;
 use Yii;
 use common\models\Post;
 use backend\models\search\PostSearch;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PostController implements the CRUD actions for Post model.
@@ -64,10 +67,14 @@ class PostController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Post();
+        $model = new PostForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->upload() && $model->save()) {
+                return $this->redirect(['index']);
+            }
+            return false;
         }
 
         return $this->render('create', [
@@ -87,7 +94,7 @@ class PostController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
