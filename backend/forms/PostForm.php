@@ -11,7 +11,6 @@ namespace backend\forms;
 
 use common\models\Post;
 use yii\base\Model;
-use yii\helpers\VarDumper;
 
 class PostForm extends Model
 {
@@ -32,9 +31,9 @@ class PostForm extends Model
     }
 
     public function upload()
-    {
+    {   $imgPath = \Yii::getAlias('@static');
         if ($this->validate()) {
-            $this->imageFile->saveAs('upload/posts/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            $this->imageFile->saveAs($imgPath . '/posts/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
             return true;
         } else {
             return false;

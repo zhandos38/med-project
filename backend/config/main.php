@@ -52,7 +52,7 @@ return [
             'access' => ['@'],
             'root' => [
                 'baseUrl'=>'@web',
-                'basePath'=>'@webroot',
+                'basePath'=>'@static',
                 'path' => 'upload/global',
                 'name' => 'Global'
             ],

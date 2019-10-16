@@ -38,7 +38,7 @@ IndexAsset::register($this);
         </div>
     </header>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#"><img class="navbar-brand_img" loading="lazy" src="img/logo.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="#"><img class="navbar-brand_img" loading="lazy" src="/img/logo.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                     class="collapse navbar-collapse navbar-column" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">

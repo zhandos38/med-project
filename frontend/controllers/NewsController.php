@@ -27,4 +27,14 @@ class NewsController extends Controller
 
         return $this->render('index', ['dataProvider' => $dataProvider]);
     }
+
+    public function actionView($id)
+    {
+        $model = Post::findOne(['id' => $id]);
+        $model->views += 1;
+        $model->save();
+        return $this->render('view', [
+            'model' => $model
+        ]);
+    }
 }
