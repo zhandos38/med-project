@@ -1,7 +1,10 @@
+<?php
+$imgPath = Yii::$app->params['staticDomain'];
+?>
 <a class="news__item-wrapper" href="<?= \yii\helpers\Url::to(['news/view', 'id' => $model->id]) ?>">
     <div class="news__item">
         <div class="row">
-            <div class="col-md-4 news__img-wrapper"><img class="img-fluid" src="<?= Yii::getAlias('@static') . '/posts/' . $model->image ?>"></div>
+            <div class="col-md-4 news__img-wrapper"><img class="img-fluid" src="<?= $imgPath . '/web/posts/' . $model->image ?>"></div>
             <div class="col-md-8">
                 <div class="news__content">
                     <div class="news__heading">

@@ -33,7 +33,7 @@ class PostForm extends Model
     public function upload()
     {   $imgPath = \Yii::getAlias('@static');
         if ($this->validate()) {
-            $this->imageFile->saveAs($imgPath . '/posts/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            $this->imageFile->saveAs($imgPath . '/web/posts/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
             return true;
         } else {
             return false;

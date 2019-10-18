@@ -51,8 +51,8 @@ return [
             'class' => 'mihaildev\elfinder\PathController',
             'access' => ['@'],
             'root' => [
-                'baseUrl'=>'@web',
-                'basePath'=>'@static',
+                'baseUrl'=>'http://static.med-project/web',
+                'basePath'=>'@static/web',
                 'path' => 'upload/global',
                 'name' => 'Global'
             ],
