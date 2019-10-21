@@ -4,7 +4,7 @@ use common\models\Post;
 /* @var Post $model */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Клинически случай', 'url' => ['/clinic-case/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2 class="news__title">

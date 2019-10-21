@@ -419,3 +419,19 @@
 .col.contacts__form {
   margin-top: 40px;
 }
+
+.news__pagination {
+  margin-top: 40px;
+}
+
+.breadcrumb > li + li::before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "\00bb ";
+}
+.breadcrumb {
+  background-color: unset;
+}
+.breadcrumb__wrapper {
+  background-color: #e9ecefa8;
+}

@@ -13,13 +13,13 @@ use common\models\Post;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 
-class NewsController extends Controller
+class ClinicCaseController extends Controller
 {
 
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Post::find()->andWhere(['type_id' => Post::TYPE_NEWS]),
+            'query' => Post::find()->andWhere(['type_id' => Post::TYPE_CLINIC_STATE]),
             'pagination' => [
                 'pageSize' => 3
             ]

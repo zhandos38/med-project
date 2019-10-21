@@ -5,7 +5,6 @@ $params = array_merge(
     require __DIR__ . '/params.php',
     require __DIR__ . '/params-local.php'
 );
-
 return [
     'id' => 'app-frontend',
     'language' => 'ru',
@@ -42,6 +41,11 @@ return [
             'showScriptName' => false,
             'rules' => [
             ],
+        ],
+    ],
+    'container' => [
+        'definitions' => [
+            \yii\widgets\LinkPager::class => \yii\bootstrap4\LinkPager::class,
         ],
     ],
     'params' => $params,

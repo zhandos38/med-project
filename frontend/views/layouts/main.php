@@ -26,73 +26,19 @@ IndexAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div>
-    <header class="header">
-        <div class="row">
-            <div class="col header-column">
-                <div class="container header-container">
-                    <div class="header-search"><input class="d-xl-flex navbar-search__input form-control" type="search" placeholder="Пойск по сайту"><i class="fa fa-search header__search-icon"></i></div>
-                    <div class="header-buttons"><button class="btn btn-light" type="button">Вступить в общество</button><button class="btn btn-light header-login-btn" type="button">Войти</button></div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-        <div class="container"><a class="navbar-brand" href="#"><img class="navbar-brand_img" loading="lazy" src="/img/logo.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                    class="collapse navbar-collapse navbar-column" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Общество</a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">Об обществе</a>
-                            <a class="dropdown-item" role="presentation" href="#">Устав</a>
-                            <a class="dropdown-item" role="presentation" href="#">История</a>
-                            <a class="dropdown-item" role="presentation" href="#">Документы</a>
-                            <a class="dropdown-item" role="presentation" href="#">Правление</a>
-                            <a class="dropdown-item" role="presentation" href="#">Члены общества</a>
-                            <a class="dropdown-item" role="presentation" href="#">География общество</a>
-                            <a class="dropdown-item" role="presentation" href="#">Новости</a>
-                            <a class="dropdown-item" role="presentation" href="#">Медицинские партнеры</a>
-                            <a class="dropdown-item" role="presentation" href="#">Ветеранский совет</a>
-                        </div>
-                    </li>
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Мероприятия</a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">First Item</a>
-                            <a class="dropdown-item" role="presentation" href="#">Second Item</a>
-                            <a class="dropdown-item" role="presentation" href="#">Third Item</a>
-                        </div>
-                    </li>
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Наука и практика</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                    </li>
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Правовая информация</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                    </li>
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Специалистам</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                    </li>
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Пациентам</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Контакты</a></li>
-                    <li class="nav-item" role="presentation"></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-<div class="container">
-    <div style="text-align: center;">
-        <div class="row">
-            <div class="col">
-                <div class="text-left" style="font-size: 17px;margin: 20px 0;">
-                    <?= Breadcrumbs::widget([
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ]) ?>
-                </div>
-            </div>
+<?= $this->render('_navbar')  ?>
+
+<div class="breadcrumb__wrapper">
+    <div class="container">
+        <div class="text-left" style="font-size: 17px;margin: 20px 0;">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
         </div>
     </div>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="col-md-8">
 <?= Alert::widget() ?>

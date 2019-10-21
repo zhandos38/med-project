@@ -68,6 +68,7 @@ class Post extends \yii\db\ActiveRecord
             'views' => 'Просмотры',
             'user_id' => 'Автор',
             'type_id' => 'Тип',
+            'image' => 'Рисунок',
             'created_at' => 'Дата добавление',
             'updated_at' => 'Дата обновление',
         ];

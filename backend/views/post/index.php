@@ -12,6 +12,8 @@ use common\models\Post;
 
 $this->title = 'Посты';
 $this->params['breadcrumbs'][] = $this->title;
+
+$imgPath = Yii::$app->params['staticDomain'] . 'web/posts/';
 ?>
 <div class="post-index">
 
@@ -30,19 +32,39 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            [
+                'attribute' => 'image',
+                'value' => function(Post $model) use ($imgPath) {
+                    $imgPath .= $model->image;
+                    return "<img src='$imgPath' width='250'>";
+                },
+                'format' => 'html'
+            ],
             'title',
             [
                 'attribute' => 'content',
-                'format' => 'html',
+                'format' => 'text',
             ],
             'views',
-            'user_id',
+            [
+                'attribute' => 'user_id',
+                'value' => function(Post $model) {
+                    return $model->user->full_name;
+                }
+            ],
             [
                 'attribute' => 'type_id',
                 'value' => function(Post $model) {
                     return $model->getTypeLabel();
                 }
             ],
+            [
+                'attribute' => 'created_at',
+                'value' => function(Post $model) {
+                    return date('d-m-Y H:i', $model->created_at);
+                }
+            ],
+
             //'created_at',
             //'updated_at',
 
