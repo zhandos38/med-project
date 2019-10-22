@@ -21,7 +21,7 @@ class NewsController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Post::find()->andWhere(['type_id' => Post::TYPE_NEWS]),
             'pagination' => [
-                'pageSize' => 3
+                'pageSize' => 6
             ]
         ]);
 

@@ -19,11 +19,13 @@ use yii\helpers\ArrayHelper;
  * @property int $updated_at
  *
  * @property User $user
+ * @property string $author [varchar(255)]
  */
 class Post extends \yii\db\ActiveRecord
 {
     const TYPE_NEWS = 0;
     const TYPE_CLINIC_STATE = 1;
+    const TYPE_EXPERT_OPINION = 2;
 
     public function behaviors()
     {
@@ -48,7 +50,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content', 'image'], 'string'],
+            [['content', 'image', 'author'], 'string'],
             [['views', 'user_id', 'type_id', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['title'], 'required'],
@@ -69,6 +71,7 @@ class Post extends \yii\db\ActiveRecord
             'user_id' => 'Автор',
             'type_id' => 'Тип',
             'image' => 'Рисунок',
+            'author' => 'Автор',
             'created_at' => 'Дата добавление',
             'updated_at' => 'Дата обновление',
         ];
@@ -98,6 +101,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             self::TYPE_NEWS => Yii::t('app', 'Новости'),
             self::TYPE_CLINIC_STATE => Yii::t('app', 'Клинически случай'),
+            self::TYPE_EXPERT_OPINION => Yii::t('app', 'Экспертное мнение'),
         ];
     }
 }
