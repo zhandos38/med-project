@@ -76,8 +76,7 @@ class User extends ActiveRecord implements IdentityInterface
             'code_number' => 'Номер карты',
             'role' => 'Роль',
             'status' => 'Статус',
-            'created_at' => 'Дата добавление',
-            'company_id' => 'Компания'
+            'created_at' => 'Дата добавление'
         ];
     }
 

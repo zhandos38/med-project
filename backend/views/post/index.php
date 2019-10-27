@@ -13,7 +13,7 @@ use common\models\Post;
 $this->title = 'Посты';
 $this->params['breadcrumbs'][] = $this->title;
 
-$imgPath = Yii::$app->params['staticDomain'] . '/posts/';
+$imgPath = Yii::$app->params['staticDomain'] . '/web/posts/';
 ?>
 <div class="post-index">
 
@@ -65,7 +65,6 @@ $imgPath = Yii::$app->params['staticDomain'] . '/posts/';
                 }
             ],
 
-            //'created_at',
             //'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],

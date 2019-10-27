@@ -49,9 +49,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     return date('m.d.Y H:i', $model->created_at);
                 }
             ],
-            [
-                'attribute' => 'company_id'
-            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

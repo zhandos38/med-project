@@ -19,12 +19,12 @@ use yii\helpers\Url;
                 <ul class="nav navbar-nav ml-auto">
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Общество</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">Об обществе</a>
-                            <a class="dropdown-item" role="presentation" href="#">Устав</a>
-                            <a class="dropdown-item" role="presentation" href="#">История</a>
-                            <a class="dropdown-item" role="presentation" href="#">Документы</a>
-                            <a class="dropdown-item" role="presentation" href="#">Правление</a>
-                            <a class="dropdown-item" role="presentation" href="#">Члены общества</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/about']) ?>">Об обществе</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/statute']) ?>">Устав</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/history']) ?>">История</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/documents']) ?>">Документы</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/direction']) ?>">Правление</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/index']) ?>">Члены общества</a>
                             <a class="dropdown-item" role="presentation" href="#">География общество</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['/news']) ?>">Новости</a>
                             <a class="dropdown-item" role="presentation" href="#">Медицинские партнеры</a>
@@ -33,9 +33,8 @@ use yii\helpers\Url;
                     </li>
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Мероприятия</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">First Item</a>
-                            <a class="dropdown-item" role="presentation" href="#">Second Item</a>
-                            <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Предстоящие мероприятия</a>
+                            <a class="dropdown-item" role="presentation" href="#">Прошедшые мероприятия</a>
                         </div>
                     </li>
                     <li class="dropdown nav-item">
@@ -50,11 +49,20 @@ use yii\helpers\Url;
                             <a class="dropdown-item" role="presentation" href="#">Экпертные мнения</a>
                         </div>
                     </li>
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Правовая информация</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Правовая информация</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="#">Радиацианные безопасность</a>
+                            <a class="dropdown-item" role="presentation" href="#">Образование по специальности</a>
+                            <a class="dropdown-item" role="presentation" href="#">Нормативные документы</a>
+                            <a class="dropdown-item" role="presentation" href="#">Консультация юриста</a>
+                        </div>
                     </li>
-                    <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Специалистам</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    <li class="dropdown nav-item">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Специалистам</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="#">Вакансии</a>
+                        </div>
                     </li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Пациентам</a></li>

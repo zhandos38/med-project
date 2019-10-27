@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use kartik\daterange\DateRangeBehavior;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -27,12 +28,23 @@ class Post extends \yii\db\ActiveRecord
     const TYPE_CLINIC_STATE = 1;
     const TYPE_EXPERT_OPINION = 2;
 
+    public $createTimeRange;
+    public $createTimeStart;
+    public $createTimeEnd;
+
     public function behaviors()
     {
         return [
             'timestamp' => [
                 'class' => 'yii\behaviors\TimestampBehavior',
             ],
+            [
+                'class' => DateRangeBehavior::className(),
+                'attribute' => 'createTimeRange',
+                'dateStartAttribute' => 'createTimeStart',
+                'dateEndAttribute' => 'createTimeEnd',
+            ]
+
         ];
     }
 
@@ -55,6 +67,7 @@ class Post extends \yii\db\ActiveRecord
             [['title'], 'string', 'max' => 255],
             [['title'], 'required'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/']
         ];
     }
 

@@ -1,11 +1,12 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Document;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
-use yii\helpers\VarDumper;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -145,6 +146,42 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    /**
+     * Displays statute page.
+     *
+     * @return mixed
+     */
+    public function actionStatute()
+    {
+        return $this->render('statute');
+    }
+
+    /**
+     * Displays statute page.
+     *
+     * @return mixed
+     */
+    public function actionHistory()
+    {
+        return $this->render('history');
+    }
+
+    /**
+     * Displays statute page.
+     *
+     * @return mixed
+     */
+    public function actionDocuments()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Document::find(),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+        return $this->render('documents', ['dataProvider' => $dataProvider]);
     }
 
     /**

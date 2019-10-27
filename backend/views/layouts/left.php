@@ -19,7 +19,9 @@
                 'items' => [
                     ['label' => 'Разделы', 'options' => ['class' => 'header']],
                     ['label' => 'Посты', 'icon' => 'file-code-o', 'url' => ['post/index']],
+                    ['label' => 'Мероприятии', 'icon' => 'file-code-o', 'url' => ['events/index']],
                     ['label' => 'Пользователи', 'icon' => 'fas fa-user', 'url' => ['user/index']],
+                    ['label' => 'Члены общества', 'icon' => 'fas fa-user', 'url' => ['members/index']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [

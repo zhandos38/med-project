@@ -7,10 +7,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\IndexAsset;
+use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
-IndexAsset::register($this);
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ IndexAsset::register($this);
 
 <div class="breadcrumb__wrapper">
     <div class="container">
-        <div class="text-left" style="font-size: 17px;margin: 20px 0;">
+        <div class="text-left" style="font-size: 17px;">
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
