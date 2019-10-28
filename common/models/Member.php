@@ -51,7 +51,7 @@ class Member extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'integer'],
             ['is_director', 'boolean'],
             ['email', 'email'],
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -84,7 +84,8 @@ class Member extends \yii\db\ActiveRecord
 
     public function beforeSave($insert)
     {
-        $this->image = $this->imageFile->baseName . '.' . $this->imageFile->extension;
+        if (!$this->image || $insert['image'])
+            $this->image = $this->imageFile->baseName . '.' . $this->imageFile->extension;
         return true;
     }
 }

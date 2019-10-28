@@ -20,6 +20,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'is_director')->checkbox([
+            'value' => 1
+    ]) ?>
+
     <?= $form->field($model, 'imageFile')->fileInput() ?>
 
     <div class="form-group">

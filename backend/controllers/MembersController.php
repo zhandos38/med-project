@@ -96,7 +96,9 @@ class MembersController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model,'imageFile');
-            if ($model->save() && $model->upload()) {
+            if ($model->save()) {
+                if ($model->imageFile)
+                    $model->upload();
                 return $this->redirect(['index']);
             }
             return false;
