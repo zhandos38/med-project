@@ -26,6 +26,17 @@ class CommunityController extends Controller
         return $this->render('index', ['dataProvider' => $dataProvider]);
     }
 
+    public function actionDirection()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Member::find()->where(['is_director' => Member::IS_DIRECTOR_YES]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+        return $this->render('index', ['dataProvider' => $dataProvider]);
+    }
+
     public function actionMember($id)
     {
         $member = Member::findOne(['id' => $id]);

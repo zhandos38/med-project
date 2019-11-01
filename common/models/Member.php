@@ -21,6 +21,9 @@ use yii\helpers\VarDumper;
  */
 class Member extends \yii\db\ActiveRecord
 {
+    const IS_DIRECTOR_NO = 0;
+    const IS_DIRECTOR_YES = 1;
+
     public $imageFile;
 
     public function behaviors()
