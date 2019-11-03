@@ -2,20 +2,19 @@
 
 namespace backend\controllers;
 
-use backend\forms\PostForm;
+use backend\forms\TutorialForm;
 use Yii;
-use common\models\Post;
-use backend\models\search\PostSearch;
-use yii\helpers\VarDumper;
+use common\models\Tutorial;
+use backend\models\TutorialSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 
 /**
- * PostController implements the CRUD actions for Post model.
+ * TutorialsController implements the CRUD actions for Tutorials model.
  */
-class PostController extends Controller
+class TutorialsController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -33,12 +32,12 @@ class PostController extends Controller
     }
 
     /**
-     * Lists all Post models.
+     * Lists all Tutorials models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PostSearch();
+        $searchModel = new TutorialSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +47,7 @@ class PostController extends Controller
     }
 
     /**
-     * Displays a single Post model.
+     * Displays a single Tutorials model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,16 +60,17 @@ class PostController extends Controller
     }
 
     /**
-     * Creates a new Post model.
+     * Creates a new Tutorials model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new PostForm();
+        $model = new Tutorial();
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->tutorialFile = UploadedFile::getInstance($model, 'tutorialFile');
             if ($model->save() && $model->upload()) {
                 return $this->redirect(['index']);
             }
@@ -83,7 +83,7 @@ class PostController extends Controller
     }
 
     /**
-     * Updates an existing Post model.
+     * Updates an existing Tutorials model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,12 +93,8 @@ class PostController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if ($model->save() && $model->upload()) {
-                return $this->redirect(['index']);
-            }
-            return false;
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -107,7 +103,7 @@ class PostController extends Controller
     }
 
     /**
-     * Deletes an existing Post model.
+     * Deletes an existing Tutorials model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -121,15 +117,15 @@ class PostController extends Controller
     }
 
     /**
-     * Finds the Post model based on its primary key value.
+     * Finds the Tutorials model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Post the loaded model
+     * @return Tutorial the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Post::findOne($id)) !== null) {
+        if (($model = Tutorial::findOne($id)) !== null) {
             return $model;
         }
 

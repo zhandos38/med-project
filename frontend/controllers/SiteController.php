@@ -296,4 +296,9 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+    public function actionUnderConstruction()
+    {
+        return $this->render('under-construction');
+    }
 }

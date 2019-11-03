@@ -71,7 +71,6 @@ class MembersController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-//            VarDumper::dump($model->imageFile,10,1); die;
             if ($model->save() && $model->upload()) {
                 return $this->redirect(['index']);
             }

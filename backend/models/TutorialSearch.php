@@ -4,17 +4,13 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Document;
+use common\models\Tutorial;
 
 /**
- * DocumentSearch represents the model behind the search form of `common\models\Document`.
+ * TutorialsSearch represents the model behind the search form of `common\models\Tutorials`.
  */
-class DocumentSearch extends Document
+class TutorialSearch extends Tutorial
 {
-    public $createTimeRange;
-    public $createTimeStart;
-    public $createTimeEnd;
-
     /**
      * {@inheritdoc}
      */
@@ -22,7 +18,7 @@ class DocumentSearch extends Document
     {
         return [
             [['id', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'document', 'type', 'size'], 'safe'],
+            [['name', 'description', 'image', 'file'], 'safe'],
         ];
     }
 
@@ -44,7 +40,7 @@ class DocumentSearch extends Document
      */
     public function search($params)
     {
-        $query = Document::find();
+        $query = Tutorial::find();
 
         // add conditions that should always apply here
 
@@ -68,14 +64,9 @@ class DocumentSearch extends Document
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'document', $this->document])
-            ->andFilterWhere(['like', 'type', $this->type])
-            ->andFilterWhere(['like', 'size', $this->size]);
-
-        if ($this->createTimeRange) {
-            $query->andFilterWhere(['>=', 'created_at', $this->createTimeStart+((60*60)*6)])
-                ->andFilterWhere(['<', 'created_at', $this->createTimeEnd+((60*60)*6)]);
-        }
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'file', $this->file]);
 
         return $dataProvider;
     }

@@ -25,23 +25,23 @@ use yii\helpers\Url;
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/documents']) ?>">Документы</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/direction']) ?>">Правление</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/index']) ?>">Члены общества</a>
-                            <a class="dropdown-item" role="presentation" href="#">География общество</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/geography']) ?>">География общество</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['/news']) ?>">Новости</a>
-                            <a class="dropdown-item" role="presentation" href="#">Медицинские партнеры</a>
-                            <a class="dropdown-item" role="presentation" href="#">Ветеранский совет</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/under-construction']) ?>">Медицинские партнеры</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/under-construction']) ?>">Ветеранский совет</a>
                         </div>
                     </li>
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Мероприятия</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">Предстоящие мероприятия</a>
-                            <a class="dropdown-item" role="presentation" href="#">Прошедшые мероприятия</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['events/future']) ?>">Предстоящие мероприятия</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['events/last']) ?>">Прошедшые мероприятия</a>
                         </div>
                     </li>
                     <li class="dropdown nav-item">
                         <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Наука и практика</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">Учебные пособия</a>
-                            <a class="dropdown-item" role="presentation" href="#">Рекомендации</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/tutorials']) ?>">Учебные пособия</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/recommendations']) ?>">Рекомендации</a>
                             <a class="dropdown-item" role="presentation" href="#">Публикации</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['/clinic-case']) ?>">Клинические случай</a>
                             <a class="dropdown-item" role="presentation" href="#">Презентации</a>

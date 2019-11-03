@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'pagination' => $dataProvider->getPagination(),
             'maxButtonCount' => 3,
             'options' => [
-                'class' => 'news__pagination'
+                'class' => 'clinic-cases__pagination'
             ]
         ]);
     ?>

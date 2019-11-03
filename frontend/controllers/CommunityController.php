@@ -11,6 +11,7 @@ namespace frontend\controllers;
 
 use common\models\Member;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Json;
 use yii\web\Controller;
 
 class CommunityController extends Controller
@@ -43,5 +44,39 @@ class CommunityController extends Controller
         return $this->render('member', [
             'model' => $member
         ]);
+    }
+
+    public function actionGeography()
+    {
+        if (\Yii::$app->request->isAjax) {
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $marks = '{ 
+                        "type":"Feature",
+                        "id":0,
+                        "geometry":{ 
+                           "type":"Point",
+                           "coordinates":[ 
+                              51.198222, 71.416985
+                           ]
+                        },
+                        "properties":{ 
+                           "balloonContentBody":"Body",
+                           "balloonContentFooter":"footer",
+                           "hintContent":"<strong>Текст  <s>подсказки</s></strong>"
+                        }
+                    }';
+
+            $data = '{
+                        "type":"FeatureCollection",
+                        "features":[ 
+                            ' . $marks . '
+                        ]
+                    }';
+
+            return $data;
+        }
+
+        return $this->render('geography');
     }
 }

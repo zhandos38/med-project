@@ -19,6 +19,8 @@
                 'items' => [
                     ['label' => 'Разделы', 'options' => ['class' => 'header']],
                     ['label' => 'Посты', 'icon' => 'file-code-o', 'url' => ['post/index']],
+                    ['label' => 'Учебные пособия', 'icon' => 'file-code-o', 'url' => ['tutorials/index']],
+                    ['label' => 'Документы', 'icon' => 'file-code-o', 'url' => ['documents/index']],
                     ['label' => 'Мероприятии', 'icon' => 'file-code-o', 'url' => ['events/index']],
                     ['label' => 'Пользователи', 'icon' => 'fas fa-user', 'url' => ['user/index']],
                     ['label' => 'Члены общества', 'icon' => 'fas fa-user', 'url' => ['members/index']],

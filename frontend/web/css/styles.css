@@ -117,32 +117,36 @@
 .about__button {
   margin-top: 16px;
   border-radius: 35px;
-  border-width: 2px;
   font-size: 14px;
-  padding: 10px 20px;
   color: #fff;
   font-weight: bold;
   background-color: transparent;
-}
-
-.about__button {
-  border: 1px solid transparent;
+  border: 2px solid #fff;
   padding: 15px 35px;
-  font-weight: bold;
-  border-radius: 35px;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: transparent;
-  border-color: #fff;
-  border-width: 2px;
-  color: #fff;
-  font-size: 14px;
+  transition: all 0.5s ease;
 }
 
 .about__button:hover {
   background-color: #fff;
   color: #000;
   text-decoration: initial;
+}
+
+.page-item.active .page-link {
+  background-color: #33b5e5;
+  border-color: #33b5e5;
+}
+.page-link {
+  color: #33b5e5;
+}
+.col-md-8 h2 {
+  margin-bottom: 20px;
+}
+
+#map {
+  width: 100%; height: 100%; padding: 0; margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -246,17 +250,21 @@
 }
 
 .slider__button {
-  border: 1px solid transparent;
+  border: 2px solid #fff;
   padding: 15px 35px;
   font-weight: bold;
   border-radius: 35px;
   text-decoration: none;
   text-transform: uppercase;
   background-color: transparent;
-  border-color: #fff;
-  border-width: 2px;
   color: #fff;
   font-size: 14px;
+  transition: all 0.5s ease;
+}
+.slider__button:hover {
+  background-color: #fff;
+  color: #000;
+  text-decoration: initial;
 }
 
 .slider__button-wrapper {
@@ -434,9 +442,15 @@
 .breadcrumb {
   background-color: unset;
   font-size: 16px;
+  padding-left: 0;
+}
+.breadcrumb a {
+  color: #fff;
 }
 .breadcrumb__wrapper {
-  background-color: #e9ecefa8;
+  background: linear-gradient(0deg,rgba(51,181,229,0.8),rgba(51,181,229,0.89)), url(../../img/ornament-hero.png);
+  background-repeat: round;
+  color: #fff;
 }
 
 /* Events */
@@ -598,6 +612,53 @@
 /* 2 columns */
 .grid-item--width2 {
   width: 40%;
+}
+
+/* Tutorials */
+.tutorial__link {
+  color: #0a0a0a;
+}
+.tutorial__link:hover {
+  color: #0a0a0a;
+  text-decoration: unset;
+}
+.tutorial__box {
+  text-align: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;;
+}
+.tutorial__box:hover {
+  opacity: 0.6;
+}
+.tutorial__content {
+  padding: 15px 20px;
+}
+.tutorial__icon-wrapper {
+  padding: 15px;
+}
+.tutorial__info {
+  margin-top: 10px;
+  color: #9a9a9a;
+}
+.tutorial__pagination {
+  margin-top: 40px;
+}
+.tutorial__image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.tutorial__description {
+  color: #9a9a9a;
+  font-size: 14px;
+}
+.tutorial__email {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.tutorial__envelope-icon {
+  margin-right: 5px;
 }
 
 

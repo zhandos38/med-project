@@ -27,4 +27,27 @@ class EventsController extends Controller
         return $this->render('index', ['dataProvider' => $dataProvider]);
     }
 
+    public function actionLast()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Event::find()->where(['<','start_at',time()]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('index', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionFuture()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Event::find()->where(['>','start_at',time()]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('index', ['dataProvider' => $dataProvider]);
+    }
 }

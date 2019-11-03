@@ -27,10 +27,12 @@ class Post extends \yii\db\ActiveRecord
     const TYPE_NEWS = 0;
     const TYPE_CLINIC_STATE = 1;
     const TYPE_EXPERT_OPINION = 2;
+    const TYPE_RECOMMENDATION = 3;
 
     public $createTimeRange;
     public $createTimeStart;
     public $createTimeEnd;
+    public $imageFile;
 
     public function behaviors()
     {
@@ -67,7 +69,8 @@ class Post extends \yii\db\ActiveRecord
             [['title'], 'string', 'max' => 255],
             [['title'], 'required'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
-            [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/']
+            [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg']
         ];
     }
 
@@ -87,6 +90,7 @@ class Post extends \yii\db\ActiveRecord
             'author' => 'Автор',
             'created_at' => 'Дата добавление',
             'updated_at' => 'Дата обновление',
+            'imageFile' => 'Рисунок'
         ];
     }
 
@@ -112,9 +116,31 @@ class Post extends \yii\db\ActiveRecord
     public static function getTypes()
     {
         return [
-            self::TYPE_NEWS => Yii::t('app', 'Новости'),
-            self::TYPE_CLINIC_STATE => Yii::t('app', 'Клинически случай'),
-            self::TYPE_EXPERT_OPINION => Yii::t('app', 'Экспертное мнение'),
+            self::TYPE_NEWS => 'Новости',
+            self::TYPE_CLINIC_STATE => 'Клинически случай',
+            self::TYPE_EXPERT_OPINION => 'Экспертное мнение',
+            self::TYPE_RECOMMENDATION => 'Рекомендации'
         ];
+    }
+
+    public function upload()
+    {   $imgPath = \Yii::getAlias('@static');
+
+        if ($this->imageFile == null)
+            return true;
+
+        if ($this->validate()) {
+            $this->imageFile->saveAs($imgPath . '/web/posts/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function beforeSave($insert)
+    {
+        if (!$this->image)
+            $this->image = $this->imageFile->baseName . '.' . $this->imageFile->extension;
+        return true;
     }
 }
