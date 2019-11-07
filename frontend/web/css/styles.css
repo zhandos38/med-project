@@ -670,6 +670,38 @@
   margin-right: 5px;
 }
 
+.recommendation__name {
+  font-weight: 600;
+  margin-top: 10px;
+}
+.recommendation__short-description {
+  margin-top: 5px;
+}
+.recommendation__date {
+  font-size: 14px;
+  color: #3a3a3a;
+}
+
+.recommendation__box {
+  padding: 20px 15px;
+  margin-top: 20px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  color: #0a0a0a;
+  transition: all .5s ease;
+}
+.recommendation__box:hover {
+  opacity: 0.6;
+}
+
+.recommendation__link {
+  color: #0a0a0a;
+}
+
+.recommendation__link:hover {
+  text-decoration: unset;
+}
+
 .footer-clean {
   margin-top: 40px;
 }

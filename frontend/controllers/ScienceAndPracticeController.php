@@ -42,4 +42,10 @@ class ScienceAndPracticeController extends Controller
         ]);
         return $this->render('recommendations', ['dataProvider' => $dataProvider]);
     }
+
+    public function actionViewRecommendation($id)
+    {
+        $model = Post::findOne(['id' => $id]);
+        return $this->render('view-recommendation', ['model' => $model]);
+    }
 }
