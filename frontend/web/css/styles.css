@@ -10,6 +10,38 @@
   margin-left: 132px;
 }
 
+.header-buttons {
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+.header-enter-btn {
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  padding-right: 5px;
+}
+
+.header-enter-btn:hover {
+  opacity: 0.8;
+}
+
+.header-login-btn {
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.header-login-btn:hover {
+  opacity: 0.8;
+}
+
+.header-sign-in-icon {
+  padding-right: 5px;
+}
+
 .container.header-container {
   padding: 10px 10px;
 }
@@ -670,6 +702,8 @@
   margin-right: 5px;
 }
 
+
+/* Recommendation */
 .recommendation__name {
   font-weight: 600;
   margin-top: 10px;
@@ -681,7 +715,6 @@
   font-size: 14px;
   color: #3a3a3a;
 }
-
 .recommendation__box {
   padding: 20px 15px;
   margin-top: 20px;
@@ -693,13 +726,74 @@
 .recommendation__box:hover {
   opacity: 0.6;
 }
-
 .recommendation__link {
   color: #0a0a0a;
 }
-
 .recommendation__link:hover {
   text-decoration: unset;
+}
+
+/* Publication */
+.publication__name {
+  font-weight: 600;
+  margin-top: 10px;
+}
+.publication__short-description {
+  margin-top: 5px;
+}
+.publication__date {
+  font-size: 14px;
+  color: #3a3a3a;
+}
+.publication__box {
+  padding: 20px 15px;
+  margin-top: 20px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  color: #0a0a0a;
+  transition: all .5s ease;
+}
+.publication__box:hover {
+  opacity: 0.6;
+}
+.publication__link {
+  color: #0a0a0a;
+}
+.publication__link:hover {
+  text-decoration: unset;
+}
+
+/* Clinic case */
+.clinic-case__name {
+  font-weight: 600;
+  margin-top: 15px;
+}
+.clinic-case__date {
+  font-size: 14px;
+  color: #3a3a3a;
+}
+.clinic-case__box {
+  padding: 20px 15px;
+  margin-top: 20px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  color: #0a0a0a;
+  transition: all .5s ease;
+}
+.clinic-case__box:hover {
+  opacity: 0.6;
+}
+.clinic-case__link {
+  color: #0a0a0a;
+}
+.clinic-case__link:hover {
+  text-decoration: unset;
+}
+.clinic-cases__pagination {
+  margin-top: 40px;
+}
+.clinic-case__author {
+  margin-top: 10px;
 }
 
 .footer-clean {

@@ -25,6 +25,8 @@ mihaildev\elfinder\Assets::noConflict($this);
 
     <?= $form->field($model, 'type_id')->dropDownList(\common\models\Post::getTypes(), ['prompt' => 'Выбрать тип']) ?>
 
+    <?= $form->field($model, 'author')->textInput() ?>
+
     <?= $form->field($model, 'imageFile')->fileInput() ?>
 
     <div class="form-group">

@@ -7,7 +7,7 @@ use yii\helpers\Url;
             <div class="col header-column">
                 <div class="container header-container">
                     <div class="header-search"><input class="d-xl-flex navbar-search__input form-control" type="search" placeholder="Пойск по сайту"><i class="fa fa-search header__search-icon"></i></div>
-                    <div class="header-buttons"><button class="btn btn-light" type="button">Вступить в общество</button><button class="btn btn-light header-login-btn" type="button">Войти</button></div>
+                    <div class="header-buttons"><div class="header-enter-btn">Вступить в общество</div><div class="header-login-btn"><i class="header-sign-in-icon fa fa-sign-in"></i>Войти</div></div>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@ use yii\helpers\Url;
                         <div class="dropdown-menu" role="menu">
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/tutorials']) ?>">Учебные пособия</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/recommendations']) ?>">Рекомендации</a>
-                            <a class="dropdown-item" role="presentation" href="#">Публикации</a>
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['/clinic-case']) ?>">Клинические случай</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/publications']) ?>">Публикации</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/clinic-cases']) ?>">Клинические случай</a>
                             <a class="dropdown-item" role="presentation" href="#">Презентации</a>
                             <a class="dropdown-item" role="presentation" href="#">Видеотрансляции и архив</a>
                             <a class="dropdown-item" role="presentation" href="#">Экпертные мнения</a>

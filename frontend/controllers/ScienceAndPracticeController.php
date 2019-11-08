@@ -43,9 +43,49 @@ class ScienceAndPracticeController extends Controller
         return $this->render('recommendations', ['dataProvider' => $dataProvider]);
     }
 
-    public function actionViewRecommendation($id)
+    public function actionRecommendation($id)
     {
         $model = Post::findOne(['id' => $id]);
-        return $this->render('view-recommendation', ['model' => $model]);
+        return $this->render('recommendation', ['model' => $model]);
+    }
+
+    public function actionPublications()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Post::find()->where(['type_id' => Post::TYPE_PUBLICATION]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+        return $this->render('publications', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionPublication($id)
+    {
+        $model = Post::findOne(['id' => $id]);
+        return $this->render('publication', ['model' => $model]);
+    }
+
+    public function actionClinicCases()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Post::find()->andWhere(['type_id' => Post::TYPE_CLINIC_STATE]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('clinic-cases', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionClinicCase($id)
+    {
+        $model = Post::findOne(['id' => $id]);
+        $model->views += 1;
+        $model->save();
+
+        return $this->render('clinic-case', [
+            'model' => $model
+        ]);
     }
 }

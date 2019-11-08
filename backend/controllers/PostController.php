@@ -67,7 +67,7 @@ class PostController extends Controller
      */
     public function actionCreate()
     {
-        $model = new PostForm();
+        $model = new Post();
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');

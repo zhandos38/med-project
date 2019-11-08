@@ -28,6 +28,7 @@ class Post extends \yii\db\ActiveRecord
     const TYPE_CLINIC_STATE = 1;
     const TYPE_EXPERT_OPINION = 2;
     const TYPE_RECOMMENDATION = 3;
+    const TYPE_PUBLICATION = 4;
 
     public $createTimeRange;
     public $createTimeStart;
@@ -119,7 +120,8 @@ class Post extends \yii\db\ActiveRecord
             self::TYPE_NEWS => 'Новости',
             self::TYPE_CLINIC_STATE => 'Клинически случай',
             self::TYPE_EXPERT_OPINION => 'Экспертное мнение',
-            self::TYPE_RECOMMENDATION => 'Рекомендации'
+            self::TYPE_RECOMMENDATION => 'Рекомендации',
+            self::TYPE_PUBLICATION => 'Публикации',
         ];
     }
 

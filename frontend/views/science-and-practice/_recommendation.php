@@ -2,7 +2,7 @@
 
 /* @var \common\models\Post $model */
 ?>
-<a href="<?= \yii\helpers\Url::to(['science-and-practice/view-recommendation', 'id' => $model->id]) ?>" class="recommendation__link">
+<a href="<?= \yii\helpers\Url::to(['science-and-practice/recommendation', 'id' => $model->id]) ?>" class="recommendation__link">
     <div class="recommendation__box">
         <div class="recommendation__date">
             <?= strftime("%a %d %B %Y", $model->created_at)  ?>
