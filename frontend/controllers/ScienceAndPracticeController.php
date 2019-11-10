@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\Post;
+use common\models\Presentation;
 use common\models\Tutorial;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -87,5 +88,17 @@ class ScienceAndPracticeController extends Controller
         return $this->render('clinic-case', [
             'model' => $model
         ]);
+    }
+
+    public function actionPresentations()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Presentation::find(),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('presentations', ['dataProvider' => $dataProvider]);
     }
 }

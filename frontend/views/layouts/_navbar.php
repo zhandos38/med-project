@@ -44,7 +44,7 @@ use yii\helpers\Url;
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/recommendations']) ?>">Рекомендации</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/publications']) ?>">Публикации</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/clinic-cases']) ?>">Клинические случай</a>
-                            <a class="dropdown-item" role="presentation" href="#">Презентации</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/presentations']) ?>">Презентации</a>
                             <a class="dropdown-item" role="presentation" href="#">Видеотрансляции и архив</a>
                             <a class="dropdown-item" role="presentation" href="#">Экпертные мнения</a>
                         </div>
@@ -52,10 +52,10 @@ use yii\helpers\Url;
                     <li class="dropdown nav-item">
                         <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Правовая информация</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">Радиацианные безопасность</a>
-                            <a class="dropdown-item" role="presentation" href="#">Образование по специальности</a>
-                            <a class="dropdown-item" role="presentation" href="#">Нормативные документы</a>
-                            <a class="dropdown-item" role="presentation" href="#">Консультация юриста</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/radiation-safety']) ?>">Радиацианные безопасность</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/profile-education']) ?>">Образование по специальности</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/normative-documents']) ?>">Нормативные документы</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/consulting']) ?>">Консультация юриста</a>
                         </div>
                     </li>
                     <li class="dropdown nav-item">
@@ -66,7 +66,7 @@ use yii\helpers\Url;
                     </li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Пациентам</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Контакты</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?= Url::to(['site/contacts']) ?>">Контакты</a></li>
                     <li class="nav-item" role="presentation"></li>
                 </ul>
             </div>

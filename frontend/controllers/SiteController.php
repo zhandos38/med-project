@@ -297,6 +297,31 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionRadiationSafety()
+    {
+        return $this->render('radiation-safety');
+    }
+
+    public function actionProfileEducation()
+    {
+        return $this->render('profile-education');
+    }
+
+    public function actionNormativeDocuments()
+    {
+        return $this->render('normative-documents');
+    }
+
+    public function actionConsulting()
+    {
+        return $this->render('consulting');
+    }
+
+    public function actionContacts()
+    {
+        return $this->render('contacts');
+    }
+
     public function actionUnderConstruction()
     {
         return $this->render('under-construction');

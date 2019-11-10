@@ -646,6 +646,12 @@
   width: 40%;
 }
 
+.presentation-sizer,
+.presentation-item {
+  width: 50%;
+  padding: 10px;
+}
+
 /* Tutorials */
 .tutorial__link {
   color: #0a0a0a;
@@ -779,6 +785,7 @@
   border-radius: 10px;
   color: #0a0a0a;
   transition: all .5s ease;
+  background: #f3f3f378;;
 }
 .clinic-case__box:hover {
   opacity: 0.6;
@@ -796,6 +803,51 @@
   margin-top: 10px;
 }
 
+/* Presentations */
+.presentations__pagination {
+  margin-top: 40px;
+}
+.presentation__box {
+  padding: 20px 15px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  color: #0a0a0a;
+  transition: all .5s ease;
+  background: #f3f3f378;
+}
+.presentation__box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 36px;
+  left: 160px;
+  right: 0;
+  bottom: 0;
+  height: 173px;
+  width: 195px;
+  border-radius: 0px 0px 11px 0px;
+  background: url(/img/word-doc-icon.png) no-repeat;
+  opacity: 0.2;
+}
+.presentation__name {
+}
+.presentation__footer {
+  display: flex;
+  justify-content: space-between;
+}
+.presentation__year-icon {
+  padding-right: 5px;
+}
+.presentation__views-icon {
+  padding-right: 5px;
+}
+.presentation__author {
+  margin-top: 5px;
+}
+.presentation__footer {
+  margin-top: 10px;
+}
+
 .footer-clean {
   margin-top: 40px;
 }
@@ -804,9 +856,57 @@
   border-radius: 0 !important;
 }
 
+/* Contacts */
+.contacts__item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.contacts__item {
+  width: 100%;
+}
+
+.contacts__item {
+  text-align: center;
+  width: 160px;
+}
+
+.contacts__item-title {
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.contacts__email {
+  display: flex;
+}
+
+.contacts__email-icon {
+  padding-right: 8px;
+  font-size: 18px;
+  padding-top: 4px;
+}
+
+.col.contacts__form {
+  margin-top: 40px;
+}
+
 @media only screen and (max-width: 992px) {
   .grid-item {
     width: 50%;
+  }
+  .presentation-item {
+    width: 100%;
+  }
+  .presentation__box::after {
+    top: 33px;
+    left: 140px;
+    height: 200px;
+    width: 195px;
   }
 }
 

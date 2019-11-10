@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Index';
+$this->title = 'Главная страница | KSIOR';
 ?>
 <section id="slider">
     <div class="row">
