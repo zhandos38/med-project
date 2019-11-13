@@ -6,6 +6,8 @@ use common\models\Post;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news/index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$imgPath = Yii::$app->params['staticDomain'] . 'web/posts/';
 ?>
 <h2 class="news__title">
     <strong>
@@ -14,6 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <br>
 </h2>
 <div class="news__content-view">
+    <img src="<?= $imgPath . $model->image ?>" alt="<?= $model->image ?>">
     <?= $model->content ?>
 </div>
 <div class="news__comment">

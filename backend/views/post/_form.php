@@ -15,6 +15,8 @@ mihaildev\elfinder\Assets::noConflict($this);
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
+    <?= $form->field($model, 'topic')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'content')->widget(CKEditor::className(),[

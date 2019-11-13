@@ -1,8 +1,11 @@
 <?php
 
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'Главная страница | KSIOR';
+$imgPath = Yii::$app->params['staticDomain'];
+setlocale(LC_ALL,'ru_RU.utf8');
 ?>
 <section id="slider">
     <div class="row">
@@ -61,17 +64,16 @@ $this->title = 'Главная страница | KSIOR';
                     <div class="col">
                         <section>
                             <div class="photo-card">
-                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);"></div>
+                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'web/posts/' . $latestNews->image ?>);"></div>
                                 <div class="photo-details">
                                     <div class="photo-heading">
-                                        <div><span>26 сентября 2019</span></div>
-                                        <div><span><i class="fa fa-eye"></i>&nbsp;116</span></div>
+                                        <div><span><?= strftime("%a %d %B %Y", $latestNews->created_at) ?></span></div>
+                                        <div><span><i class="fa fa-eye"></i>&nbsp;<?= $latestNews->views ?></span></div>
                                     </div>
-                                    <p class="photo-text">Отличная новость! VI Международный курс «Современные тенденции в лечении острого инфаркта миокарда с подъемом сегмента ST – от теории к повседневной практике» аккредитован в системе НМО<br></p>
+                                    <p class="photo-text"><?= $latestNews->title ?><br></p>
                                     <div class="photo-tags">
-                                        <ul>
-                                            <li><a href="#">Читать</a></li>
-                                            <li><a href="#">Все новости</a></li>
+                                        <ul><li><a href="<?= Url::to(['news/view', 'id' => $latestNews->id]) ?>">Читать</a></li>
+                                            <li><a href="<?= Url::to(['news/index']) ?>">Все новости</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -86,14 +88,14 @@ $this->title = 'Главная страница | KSIOR';
                     <div class="col">
                         <section>
                             <div class="photo-card" style="background-color: rgb(0,35,42);">
-                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);"></div>
+                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'web/posts/' . $latestClinicCase->image ?>);"></div>
                                 <div class="photo-details">
-                                    <div class="photo-heading"><span class="photo-author"><i class="fa fa-bullhorn"></i>&nbsp;Иоселиани Давид Георгиевич<br></span></div>
-                                    <p style="padding-top: 5px;">Окклюзия правой поверхностной и глубокой бедренных артерий после стентирования почечной артерии у пациента с мультифокальным атеросклерозом<br></p>
+                                    <div class="photo-heading"><span class="photo-author"><i class="fa fa-bullhorn"></i>&nbsp;<?= $latestClinicCase->author ?><br></span></div>
+                                    <p style="padding-top: 5px;"><?= $latestClinicCase->title ?><br></p>
                                     <div class="photo-tags">
                                         <ul>
-                                            <li><a href="#" style="background-color: #009cbf;">Читать</a></li>
-                                            <li><a href="#" style="background-color: #009cbf;">Другие случаи</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/clinic-case', 'id' => $latestClinicCase->id]) ?>" style="background-color: #009cbf;">Читать</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/clinic-cases']) ?>" style="background-color: #009cbf;">Другие случаи</a></li>
                                         </ul>
                                     </div>
                                     <div class="photo-heading"></div>
@@ -111,9 +113,9 @@ $this->title = 'Главная страница | KSIOR';
                             <div class="photo-card" style="background-color: #fff;">
                                 <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);"></div>
                                 <div class="photo-details">
-                                    <h1 style="color: rgb(0,0,0);"><strong>Лечение артериовенозной мальформации</strong><br></h1>
-                                    <p style="color: rgb(0,0,0);">Современный вектор эндоваскулярного лечения острого периода разрыва артериовенозной мальформации.<br></p>
-                                    <div><a href="#">Гегенава Б. Б.<br></a></div>
+                                    <h1 style="color: rgb(0,0,0);"><strong><?= $latestExpertOpinion->topic ?></strong><br></h1>
+                                    <p style="color: rgb(0,0,0);"><?= $latestExpertOpinion->title ?><br></p>
+                                    <div><a href="#"><?= $latestExpertOpinion->author ?><br></a></div>
                                 </div>
                             </div>
                         </section>
@@ -126,13 +128,20 @@ $this->title = 'Главная страница | KSIOR';
                     <div class="col">
                         <section>
                             <div class="photo-card">
-                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);"></div>
+                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);">
+                                    <div class="magazine-download__link-wrapper">
+                                        <a href="#" class="magazine-download__link">
+                                            <div class="magazine-download">
+                                                Скачать журнал
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="photo-details">
                                     <h1>Lorem ipsum</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales elementum mi non hendrerit. Proin tempor facilisis felis nec ultrices.&nbsp;</p>
                                     <div class="photo-tags">
                                         <ul>
-                                            <li><a href="#">Скачать журнал</a></li>
                                             <li><a href="#">Мед калькулятор</a></li>
                                         </ul>
                                     </div>
@@ -161,15 +170,17 @@ $this->title = 'Главная страница | KSIOR';
                         <div class="team__item-title"><span><br>Бабунашвили Автандил Михайлович<br><br></span></div>
                     </div>
                 </div>
-                <div><a class="about__button" href="#">Другие участники</a></div>
+                <div><a class="about__button" href="<?= Url::to(['community/direction']) ?>">Другие участники</a></div>
             </div>
             <div class="col-md-6 about__column">
                 <h2>Об обществе</h2>
                 <div>
-                    <p class="about__description">«Российское научное общество интервенционных кардиоангиологов» (РНОИК) — это общероссийская общественная организация, объединяющая с 2000 года врачей кардиологов, рентгенологов, сердечно-сосудистых хирургов и специалистов по рентгенэндоваскулярной
-                        диагностике и лечению с самой широкой географией от Калининграда до Камчатки.<br><br></p>
+                    <p class="about__description">
+                        «Российское научное общество интервенционных кардиоангиологов» (РНОИК) — это общероссийская общественная организация, объединяющая с 2000 года врачей кардиологов, рентгенологов, сердечно-сосудистых хирургов и специалистов по рентгенэндоваскулярной
+                        диагностике и лечению с самой широкой географией от Калининграда до Камчатки.<br><br>
+                    </p>
                 </div>
-                <div><a class="about__button" href="#">Узнать больше</a></div>
+                <div><a class="about__button" href="<?= Url::to(['site/about']) ?>">Узнать больше</a></div>
             </div>
         </div>
     </div>

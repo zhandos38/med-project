@@ -894,6 +894,29 @@
 .col.contacts__form {
   margin-top: 40px;
 }
+.magazine-download__link-wrapper {
+  position: absolute;
+  bottom: 30px;
+  left: 60px;
+}
+.magazine-download__link {
+  text-decoration: unset;
+}
+.magazine-download__link:hover {
+  text-decoration: unset;
+}
+.magazine-download {
+  background-color: #009cbf;
+  border-radius: 50px;
+  color: #ffffff;
+  display: block;
+  padding: 0.3125em 1.25em;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.magazine-download:hover {
+  opacity: 0.8;
+}
 
 @media only screen and (max-width: 992px) {
   .grid-item {

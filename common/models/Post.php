@@ -65,7 +65,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content', 'image', 'author'], 'string'],
+            [['content', 'image', 'author', 'topic'], 'string'],
             [['views', 'user_id', 'type_id', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 255],
             [['title'], 'required'],
@@ -82,6 +82,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'topic' => 'Тема (Только для эксп. мнение)',
             'title' => 'Название',
             'content' => 'Описание',
             'views' => 'Просмотры',
