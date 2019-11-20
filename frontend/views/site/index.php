@@ -57,7 +57,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
 </section>
 <div class="projects-horizontal">
     <div class="container">
-        <div class="row projects">
+        <div class="row posts">
             <div class="col-sm-6 item">
                 <div class="posts__item-title"><span>Самое свежее</span></div>
                 <div class="row">
@@ -67,12 +67,17 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                 <div class="photo-background" style="background-image:url(<?= $imgPath . 'web/posts/' . $latestNews->image ?>);"></div>
                                 <div class="photo-details">
                                     <div class="photo-heading">
-                                        <div><span><?= strftime("%a %d %B %Y", $latestNews->created_at) ?></span></div>
-                                        <div><span><i class="fa fa-eye"></i>&nbsp;<?= $latestNews->views ?></span></div>
+                                        <div>
+                                            <span><?= strftime("%a %d %B %Y", $latestNews->created_at) ?></span>
+                                        </div>
+                                        <div>
+                                            <span><i class="fa fa-eye"></i>&nbsp;<?= $latestNews->views ?></span>
+                                        </div>
                                     </div>
                                     <p class="photo-text"><?= $latestNews->title ?><br></p>
                                     <div class="photo-tags">
-                                        <ul><li><a href="<?= Url::to(['news/view', 'id' => $latestNews->id]) ?>">Читать</a></li>
+                                        <ul>
+                                            <li><a href="<?= Url::to(['news/view', 'id' => $latestNews->id]) ?>">Читать</a></li>
                                             <li><a href="<?= Url::to(['news/index']) ?>">Все новости</a></li>
                                         </ul>
                                     </div>
@@ -193,7 +198,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     <h1 class="text-center blog__title">Самое обсуждаемое</h1>
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow rounded-0"><img class="card-img-top w-100 d-block rounded-0" src="img/minibus.jpeg">
+                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
                                 <div class="card-body">
                                     <div class="card-info">
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
@@ -203,7 +208,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow rounded-0"><img class="card-img-top w-100 d-block rounded-0" src="img/minibus.jpeg">
+                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
                                 <div class="card-body">
                                     <div class="card-info">
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
@@ -213,7 +218,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow rounded-0"><img class="card-img-top w-100 d-block rounded-0" src="img/minibus.jpeg">
+                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
                                 <div class="card-body">
                                     <div class="card-info">
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
@@ -223,7 +228,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow rounded-0"><img class="card-img-top w-100 d-block rounded-0" src="img/minibus.jpeg">
+                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
                                 <div class="card-body">
                                     <div class="card-info">
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
@@ -233,7 +238,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow rounded-0"><img class="card-img-top w-100 d-block rounded-0" src="img/minibus.jpeg">
+                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
                                 <div class="card-body">
                                     <div class="card-info">
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
@@ -243,11 +248,15 @@ setlocale(LC_ALL,'ru_RU.utf8');
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow rounded-0"><img class="card-img-top w-100 d-block rounded-0" src="img/minibus.jpeg">
+                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
                                 <div class="card-body">
                                     <div class="card-info">
-                                        <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
-                                        <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
+                                        <div>
+                                            <i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-commenting"></i><span class="card-comments-count">366</span>
+                                        </div>
                                     </div>
                                     <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
@@ -258,29 +267,65 @@ setlocale(LC_ALL,'ru_RU.utf8');
         </div>
     </div>
 </section>
-<div class="projects-horizontal">
-    <div class="container projects-horizontal__container">
-        <div class="intro">
-            <h2 class="text-center">Наших партнеров</h2>
-            <p class="text-center">Благодарим за сотрудничество</p>
-        </div>
-        <div class="row projects">
-            <div class="col">
-                <section class="customer-logos slider">
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client11.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client12.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client13.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client14.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client15.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client16.jpg" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client17.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client18.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client19.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client20.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client21.png" width="100%"></div>
-                    <div class="col-sm-4 col-md-3 col-lg-2 col-xl-2 slide"><img src="img/client22.png" width="100%"></div>
-                </section>
+<div class="partners">
+    <div class="partners__list-wrapper">
+        <div class="owl-carousel partners__list">
+            <div class="partners__item item">
+                <img src="/img/client11.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client12.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client13.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client14.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client15.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client16.jpg" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client17.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client18.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client19.png" alt="partners">
+            </div>
+            <div class="partners__item item">
+                <img src="/img/client20.png" alt="partners">
             </div>
         </div>
     </div>
 </div>
+<?php
+
+$js =<<<JS
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsiveClass:true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        768: {
+            items: 4
+        },
+        1200: {
+            items: 8
+        }
+    }
+  });
+});
+JS;
+
+$this->registerJs($js);
+?>

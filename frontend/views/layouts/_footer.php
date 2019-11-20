@@ -55,8 +55,12 @@
                     <a href="#"><h3>Пациентам</h3></a>
                     <a href="#"><h3>Контакты</h3></a>
                 </div>
-                <div class="col-md-12 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
-                    <p class="copyright">Company © 2019</p>
+                <div class="col-md-12 item social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-snapchat"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <p class="copyright">KSIOR © 2019</p>
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@
 }
 
 .photo-details {
-  padding: 26px 26px;
+  padding: 26px 20px;
 }
 
 @media screen and (min-width: 700px) {
@@ -63,7 +63,6 @@
   display: flex;
   flex-wrap: wrap;
   font-size: 87.5%;
-  margin-top: 0.35em;
   /*text-transform: lowercase;*/
 }
 
@@ -87,5 +86,6 @@
 
 .photo-details p {
   color: white;
+  line-height: 1.6;
 }
 

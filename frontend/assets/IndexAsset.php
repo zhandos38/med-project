@@ -12,17 +12,17 @@ class IndexAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/owl.carousel.min.css',
+        'css/owl.theme.default.min.css',
         'css/best-carousel-slide.css',
         'css/blog-page.css',
-        'css/client-logo-slider.css',
         'css/dh-card-image-left-dark.css',
         'css/footer-clean.css',
         'css/navigation.css',
-        'css/projects-horizontal.css',
-        'css/styles.css',
+        'css/styles.css'
     ];
     public $js = [
-        'js/client-logo-slider.js'
+        'js/owl.carousel.min.js'
     ];
     public $depends = [
 //        'yii\web\YiiAsset',

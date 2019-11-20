@@ -384,6 +384,10 @@
   font-size: 15.5px;
 }
 
+.partners {
+  padding: 40px 0 0 0;
+}
+
 @media (max-width: 768px) {
   .about__profile {
     width: 100%;
@@ -916,6 +920,18 @@
 }
 .magazine-download:hover {
   opacity: 0.8;
+}
+
+.posts {
+  margin: 20px 0;
+}
+
+.item {
+  margin: 20px 0px;
+}
+
+.card {
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 992px) {
