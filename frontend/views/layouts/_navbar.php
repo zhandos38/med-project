@@ -45,7 +45,7 @@ use yii\helpers\Url;
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/publications']) ?>">Публикации</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/clinic-cases']) ?>">Клинические случай</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/presentations']) ?>">Презентации</a>
-                            <a class="dropdown-item" role="presentation" href="#">Видеотрансляции и архив</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['science-and-practice/video-broadcasts']) ?>">Видеотрансляции и архив</a>
                             <a class="dropdown-item" role="presentation" href="#">Экпертные мнения</a>
                         </div>
                     </li>

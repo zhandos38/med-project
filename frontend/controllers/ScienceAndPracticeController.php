@@ -101,4 +101,23 @@ class ScienceAndPracticeController extends Controller
 
         return $this->render('presentations', ['dataProvider' => $dataProvider]);
     }
+
+    public function actionVideoBroadcasts()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Post::find()->andWhere(['type_id' => Post::TYPE_VIDEO_BROADCAST]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('video-broadcasts', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionVideoBroadcast($id)
+    {
+        $model = Post::findOne(['id' => $id]);
+
+        return $this->render('video-broadcast', ['model' => $model]);
+    }
 }

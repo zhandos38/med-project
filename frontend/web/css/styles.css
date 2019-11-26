@@ -704,6 +704,50 @@
 }
 
 
+/* video-broadcasts */
+.tutorial__link {
+  color: #0a0a0a;
+}
+.video-broadcast__link:hover {
+  color: #0a0a0a;
+  text-decoration: unset;
+}
+.video-broadcast__box {
+  text-align: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;;
+}
+.video-broadcast__box:hover {
+  opacity: 0.6;
+}
+.video-broadcast__content {
+  padding: 15px 20px;
+}
+.video-broadcast__icon-wrapper {
+  padding: 15px;
+}
+.video-broadcast__info {
+  margin-top: 10px;
+  color: #9a9a9a;
+}
+.video-broadcast__pagination {
+  margin-top: 40px;
+}
+.video-broadcast__description {
+  color: #9a9a9a;
+  font-size: 14px;
+}
+.video-broadcast__email {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.video-broadcast__envelope-icon {
+  margin-right: 5px;
+}
+
+
 /* Member View */
 .member-view__image {
   width: 100%;

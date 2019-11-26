@@ -21,6 +21,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property User $user
  * @property string $author [varchar(255)]
+ * @property string $topic [varchar(255)]
  */
 class Post extends \yii\db\ActiveRecord
 {
@@ -29,6 +30,7 @@ class Post extends \yii\db\ActiveRecord
     const TYPE_EXPERT_OPINION = 2;
     const TYPE_RECOMMENDATION = 3;
     const TYPE_PUBLICATION = 4;
+    const TYPE_VIDEO_BROADCAST = 5;
 
     public $createTimeRange;
     public $createTimeStart;
@@ -123,6 +125,7 @@ class Post extends \yii\db\ActiveRecord
             self::TYPE_EXPERT_OPINION => 'Экспертное мнение',
             self::TYPE_RECOMMENDATION => 'Рекомендации',
             self::TYPE_PUBLICATION => 'Публикации',
+            self::TYPE_VIDEO_BROADCAST => 'Видеотрансляции и архив'
         ];
     }
 
