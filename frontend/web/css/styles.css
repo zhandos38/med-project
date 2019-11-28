@@ -337,21 +337,21 @@
   opacity: 0.8;
 }
 
-.expert-opinion {
+.aside-expert-opinion {
   margin-top: 20px;
 }
 
-.expert-opinion__item {
+.aside-expert-opinion__item {
   cursor: pointer;
   margin-top: 20px;
   transition: all 0.5s ease;
 }
 
-.expert-opinion__item:hover {
+.aside-expert-opinion__item:hover {
   opacity: 0.8;
 }
 
-.expert-opinion__box {
+.aside-expert-opinion__box {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -359,7 +359,7 @@
   color: #fff;
 }
 
-.expert-opinion__title {
+.aside-expert-opinion__title {
   font-size: 14px;
   padding-top: 10px;
   background-color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
@@ -705,7 +705,12 @@
 
 
 /* video-broadcasts */
-.tutorial__link {
+.video-broadcast__item {
+  width: 46%;
+  padding: 10px 0 0 0;
+  margin: 0 28px 28px 0;
+}
+.video-broadcast__link {
   color: #0a0a0a;
 }
 .video-broadcast__link:hover {
@@ -713,11 +718,23 @@
   text-decoration: unset;
 }
 .video-broadcast__box {
-  text-align: center;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   border-radius: 10px;
   transition: all 0.5s ease;
-  cursor: pointer;;
+  cursor: pointer;
+}
+.video-broadcast__box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 6px;
+  left: 131.5px;
+  right: 0;
+  bottom: 0;
+  width: 204px;
+  border-radius: 0px 0px 11px 0px;
+  background: url(/img/youtube.png) no-repeat;
+  opacity: 0.1;
 }
 .video-broadcast__box:hover {
   opacity: 0.6;
@@ -747,6 +764,51 @@
   margin-right: 5px;
 }
 
+/* Expert opinions */
+.expert-opinion__link {
+  color: #0a0a0a;
+}
+.expert-opinions__item {
+  width: 46%;
+  padding: 10px 0 0 0;
+  margin: 0 28px 28px 0;
+}
+.expert-opinion__link:hover {
+  color: #0a0a0a;
+  text-decoration: unset;
+}
+.expert-opinion__box {
+  text-align: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;;
+}
+.expert-opinion__box:hover {
+  opacity: 0.6;
+}
+.expert-opinion__content {
+  padding: 15px 20px;
+}
+.expert-opinion__icon-wrapper {
+  padding: 15px;
+}
+.expert-opinion__info {
+  margin-top: 10px;
+  color: #9a9a9a;
+}
+.expert-opinion__pagination {
+  margin-top: 40px;
+}
+.expert-opinion__image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.expert-opinion__topic {
+  color: #000000;
+  font-weight: 700;
+  font-size: 16px;
+}
 
 /* Member View */
 .member-view__image {

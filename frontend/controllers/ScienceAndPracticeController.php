@@ -120,4 +120,24 @@ class ScienceAndPracticeController extends Controller
 
         return $this->render('video-broadcast', ['model' => $model]);
     }
+
+
+    public function actionExpertOpinions()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Post::find()->andWhere(['type_id' => Post::TYPE_EXPERT_OPINION]),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('expert-opinions', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionExpertOpinion($id)
+    {
+        $model = Post::findOne(['id' => $id]);
+
+        return $this->render('expert-opinion', ['model' => $model]);
+    }
 }

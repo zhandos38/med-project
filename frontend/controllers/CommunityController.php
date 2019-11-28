@@ -51,7 +51,7 @@ class CommunityController extends Controller
         if (\Yii::$app->request->isAjax) {
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
-            $marks = '{ 
+            $marks = '{
                         "type":"Feature",
                         "id":0,
                         "geometry":{ 
@@ -63,7 +63,7 @@ class CommunityController extends Controller
                         "properties":{ 
                            "balloonContentBody":"Body",
                            "balloonContentFooter":"footer",
-                           "hintContent":"<strong>Текст  <s>подсказки</s></strong>"
+                           "hintContent":"<strong>Текст подсказки</strong>"
                         }
                     }';
 

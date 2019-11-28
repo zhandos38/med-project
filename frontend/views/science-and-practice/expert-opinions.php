@@ -8,19 +8,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
 /* @var $this \yii\web\View */
 ?>
-<h2 class="video-broadcast__title"><?= $this->title ?></h2>
-<div class="video-broadcast__list">
+<h2 class="expert-opinions__title"><?= $this->title ?></h2>
+<div class="expert-opinions__list">
 
     <?=
     ListView::widget([
         'dataProvider' => $dataProvider,
-        'itemView' => '_video-broadcast',
+        'itemView' => '_expert-opinion',
         'layout' => '{items}',
         'options' => [
             'class' => 'list-view grid'
         ],
         'itemOptions' => [
-            'class' => 'video-broadcast__item'
+            'class' => 'expert-opinions__item'
         ]
     ]);
     ?>
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'pagination' => $dataProvider->getPagination(),
         'maxButtonCount' => 6,
         'options' => [
-            'class' => 'tutorial__pagination'
+            'class' => 'expert-opinions__pagination'
         ]
     ]);
     ?>
@@ -41,9 +41,9 @@ $js =<<<JS
 $(document).ready(function() {
     $('.grid').masonry({
         // set itemSelector so .grid-sizer is not used in layout
-        itemSelector: '.video-broadcast__item',
+        itemSelector: '.expert-opinions__item',
         // use element for option
-        columnWidth: '.video-broadcast__item',
+        columnWidth: '.expert-opinions__item',
         percentPosition: true
     });
 });

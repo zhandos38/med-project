@@ -68,12 +68,12 @@ AppAsset::register($this);
                 </div>
                 <div class="aside-event"></div>
             </div>
-            <div class="expert-opinion">
-                <h2 class="expert-opinion__header"><strong>Экспертные мнения</strong><br></h2>
-                <div class="expert-opinion__item"><a class="expert-opinion__link-wrapper" href="#"></a>
-                    <div class="expert-opinion__box">
+            <div class="aside-expert-opinion">
+                <h2 class="aside-expert-opinion__header"><strong>Экспертные мнения</strong><br></h2>
+                <div class="aside-expert-opinion__item"><a class="aside-expert-opinion__link-wrapper" href="#"></a>
+                    <div class="aside-expert-opinion__box">
                         <div><span>Лечение артериовенозной мальформации<br></span></div>
-                        <div class="expert-opinion__title">
+                        <div class="aside-expert-opinion__title">
                             <p>Современный вектор эндоваскулярного лечения острого периода разрыва артериовенозной мальформации.<br></p>
                         </div>
                         <div><span>Гегенава Б. Б.<br></span></div>
