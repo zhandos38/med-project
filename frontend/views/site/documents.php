@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'itemOptions' => [
                 'class' => [
-                    'col-md-4'
+                    'col-md-4 document__item-wrapper'
                 ]
             ]
         ]);

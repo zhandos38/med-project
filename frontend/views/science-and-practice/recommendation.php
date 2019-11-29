@@ -4,7 +4,7 @@ use common\models\Post;
 /* @var Post $model */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Наука и практика', 'url' => ['science-and-practice/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Наука и практика'];
 $this->params['breadcrumbs'][] = ['label' => 'Рекомендаций', 'url' => ['/science-and-practice/recommendations']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

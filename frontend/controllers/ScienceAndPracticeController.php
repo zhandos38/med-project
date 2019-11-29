@@ -127,7 +127,7 @@ class ScienceAndPracticeController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Post::find()->andWhere(['type_id' => Post::TYPE_EXPERT_OPINION]),
             'pagination' => [
-                'pageSize' => 6
+                'pageSize' => 4
             ]
         ]);
 

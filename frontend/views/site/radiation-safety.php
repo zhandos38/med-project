@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\web\ForbiddenHttpException;
 
 $this->title = 'Радиационная безопасность';
+$this->params['breadcrumbs'][] = ['label' => 'Правовая информация'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2 class="radiation-safety__title"><strong><?= $this->title ?></strong></h2>

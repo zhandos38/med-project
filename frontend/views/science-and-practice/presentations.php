@@ -3,7 +3,7 @@ use yii\widgets\ListView;
 use yii\widgets\LinkPager;
 
 $this->title = 'Презентации';
-$this->params['breadcrumbs'][] = ['label' => 'Наука и практика', 'url' => ['science-and-practice/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Наука и практика'];
 $this->params['breadcrumbs'][] = $this->title;
 
 setlocale(LC_ALL,'ru_RU.utf8');

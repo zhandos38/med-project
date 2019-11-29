@@ -3,7 +3,7 @@ use yii\widgets\ListView;
 use yii\widgets\LinkPager;
 
 $this->title = 'Клинически случай';
-$this->params['breadcrumbs'][] = ['label' => 'Наука и практика', 'url' => ['science-and-practice/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Наука и практика'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2 class="clinic-cases__title"><?= $this->title ?></h2>

@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\web\ForbiddenHttpException;
 
 $this->title = 'Образование по специальности';
+$this->params['breadcrumbs'][] = ['label' => 'Правовая информация'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2 class="profile-education__title"><strong><?= $this->title ?></strong></h2>

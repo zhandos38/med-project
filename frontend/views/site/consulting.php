@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\web\ForbiddenHttpException;
 
 $this->title = 'Консультация юриста';
+$this->params['breadcrumbs'][] = ['label' => 'Правовая информация'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2 class="consulting__title"><strong><?= $this->title ?></strong></h2>

@@ -3,7 +3,7 @@ use yii\widgets\ListView;
 use yii\widgets\LinkPager;
 
 $this->title = 'Учебные пособие';
-$this->params['breadcrumbs'][] = ['label' => 'Наука и практика', 'url' => ['science-and-practice/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Наука и практика'];
 $this->params['breadcrumbs'][] = $this->title;
 
 /* @var $this \yii\web\View */
