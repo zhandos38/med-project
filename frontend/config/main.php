@@ -11,6 +11,11 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'commenting' => [
+            'class' => 'yii2mod\comments\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -40,10 +45,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'about' => 'site/about',
-                'statute' => 'site/statute',
-                'history' => 'site/history',
-                'documents' => 'site/documents',
+                'to_specialist/vacations' => 'site/vacations',
             ],
         ],
     ],

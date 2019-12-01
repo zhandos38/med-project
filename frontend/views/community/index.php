@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 /* @var $this \yii\web\View */
 ?>
-<h2 class="members_title"><?= $this->title ?></h2>
+<h2 class="members__title"><?= $this->title ?></h2>
 <div class="members__list">
 
 <?=

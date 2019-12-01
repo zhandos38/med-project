@@ -13,6 +13,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2><?= $this->title ?></h2>
 <div id="map"></div>
+<div class="geography__filters">
+    <input class="filter-checkbox" type="checkbox" value="Больница" checked>Больница
+    <input class="filter-checkbox" type="checkbox" value="Аптека" checked>Аптека
+    <input class="filter-checkbox" type="checkbox" value="Кафе" checked>Кафе
+</div>
 <?php
 
 $js =<<<JS
@@ -30,25 +35,33 @@ function init () {
             clusterize: true,
             // ObjectManager принимает те же опции, что и кластеризатор.
             gridSize: 32,
-            clusterDisableClickZoom: true
+            clusterIconLayout: "default#pieChart"
         });
     
-    // Чтобы задать опции одиночным объектам и кластерам,
-    // обратимся к дочерним коллекциям ObjectManager.
-    objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-    objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+    let hospitals = {
+        "type": "FeatureCollection",
+        "features": $hospitals
+    };
+    objectManager.add(hospitals);
+    objectManager.events.add('click', function(e) {
+        console.log('Привет яндекс ' + e.get('objectId'));
+    });
+    
+    /* Добавления objectManager на карту */
     myMap.geoObjects.add(objectManager);
     
-    $.get({
-        url: '/community/geography',
-        dataType: 'json',
-        success: function(result) {
-            console.log(result);
-            objectManager.add(result);
-        },
-        error: function() {
-            alert('Возникла какая то ошибка, пожалуйста сообшите об этом администрации сайта');
-        }
+    /* Проверка фильтров */
+    $('.filter-checkbox').on('change', function(event) {
+        let filterQuery = '';
+        let checkboxesLength = $('.filter-checkbox:checked').length;
+        $('.filter-checkbox:checked').each(function(index) {
+            let item = $(this);
+            filterQuery += 'properties.type == "' + item.val() + '"';
+            if (index !== checkboxesLength - 1)
+                filterQuery += ' || ';
+        });
+        objectManager.setFilter(filterQuery);
+        console.log(filterQuery);
     });
 }
 JS;

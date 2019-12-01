@@ -1,8 +1,8 @@
 <?php
 namespace frontend\controllers;
 
-use common\models\Document;
 use common\models\Post;
+use common\models\Vacation;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -83,6 +83,8 @@ class SiteController extends Controller
         $latestClinicCase = Post::find()->where(['type_id' => Post::TYPE_CLINIC_STATE])->orderBy(['id' => SORT_DESC])->one();
         $latestExpertOpinion = Post::find()->where(['type_id' => Post::TYPE_EXPERT_OPINION])->orderBy(['id' => SORT_DESC])->one();
 
+        $lastNews = Post::find()->where(['type_id' => Post::TYPE_NEWS])->orderBy(['id' => SORT_DESC])->limit(6)->all();
+
         return $this->render('index', [
             'latestNews' => $latestNews,
             'latestClinicCase' => $latestClinicCase,
@@ -146,52 +148,6 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
-    /**
-     * Displays statute page.
-     *
-     * @return mixed
-     */
-    public function actionStatute()
-    {
-        return $this->render('statute');
-    }
-
-    /**
-     * Displays statute page.
-     *
-     * @return mixed
-     */
-    public function actionHistory()
-    {
-        return $this->render('history');
-    }
-
-    /**
-     * Displays statute page.
-     *
-     * @return mixed
-     */
-    public function actionDocuments()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Document::find(),
-            'pagination' => [
-                'pageSize' => 6
-            ]
-        ]);
-        return $this->render('documents', ['dataProvider' => $dataProvider]);
     }
 
     /**
@@ -335,5 +291,17 @@ class SiteController extends Controller
     public function actionUnderConstruction()
     {
         return $this->render('under-construction');
+    }
+
+    public function actionVacations()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Vacation::find(),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+
+        return $this->render('vacations', ['dataProvider' => $dataProvider]);
     }
 }

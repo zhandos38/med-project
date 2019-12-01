@@ -47,7 +47,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
         </div>
         <div class="col col-md-5 slider__description-wrapper">
             <div class="slider__description">
-                <h2 class="slider__header">Будте с нами!</h2>
+                <h2 class="slider__header">Будьте с нами!</h2>
                 <p class="slider__text">Дорогие коллеги, приглашаем к активному сотрудничеству в рамках научно-практической жизни российского общества интервенционных кардиоангиологов. Нашей динамично развивающейся специальности нужны молодые амбициозные профессионалы! Будьте
                     с нами! Вступайте в общество РНОИК!<br></p>
                 <div class="slider__button-wrapper"><a class="slider__button" href="#">Вы в обществе</a></div>
@@ -269,6 +269,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
 </section>
 <div class="partners">
     <div class="partners__list-wrapper">
+        <h2 style="text-align: center; margin-bottom: 40px">
+            Наши партнеры
+        </h2>
         <div class="owl-carousel partners__list">
             <div class="partners__item item">
                 <img src="/img/client11.png" alt="partners">

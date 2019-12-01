@@ -19,14 +19,14 @@ use yii\helpers\Url;
                 <ul class="nav navbar-nav ml-auto">
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Общество</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/about']) ?>">Об обществе</a>
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/statute']) ?>">Устав</a>
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/history']) ?>">История</a>
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/documents']) ?>">Документы</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/about']) ?>">Об обществе</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/statute']) ?>">Устав</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/history']) ?>">История</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/documents']) ?>">Документы</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/direction']) ?>">Правление</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/index']) ?>">Члены общества</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/geography']) ?>">География общество</a>
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['/news']) ?>">Новости</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['news/']) ?>">Новости</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/under-construction']) ?>">Медицинские партнеры</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/under-construction']) ?>">Ветеранский совет</a>
                         </div>
@@ -61,7 +61,7 @@ use yii\helpers\Url;
                     <li class="dropdown nav-item">
                         <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Специалистам</a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#">Вакансии</a>
+                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/vacations']) ?>">Вакансии</a>
                         </div>
                     </li>
                     <li class="nav-item" role="presentation"></li>

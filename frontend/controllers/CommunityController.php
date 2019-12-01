@@ -9,9 +9,9 @@
 namespace frontend\controllers;
 
 
+use common\models\Document;
 use common\models\Member;
 use yii\data\ActiveDataProvider;
-use yii\helpers\Json;
 use yii\web\Controller;
 
 class CommunityController extends Controller
@@ -25,6 +25,52 @@ class CommunityController extends Controller
             ]
         ]);
         return $this->render('index', ['dataProvider' => $dataProvider]);
+    }
+
+    /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
+
+    /**
+     * Displays statute page.
+     *
+     * @return mixed
+     */
+    public function actionStatute()
+    {
+        return $this->render('statute');
+    }
+
+    /**
+     * Displays statute page.
+     *
+     * @return mixed
+     */
+    public function actionHistory()
+    {
+        return $this->render('history');
+    }
+
+    /**
+     * Displays statute page.
+     *
+     * @return mixed
+     */
+    public function actionDocuments()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Document::find(),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+        return $this->render('documents', ['dataProvider' => $dataProvider]);
     }
 
     public function actionDirection()
@@ -48,35 +94,68 @@ class CommunityController extends Controller
 
     public function actionGeography()
     {
-        if (\Yii::$app->request->isAjax) {
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-
-            $marks = '{
+        $hospitals = '[{
                         "type":"Feature",
                         "id":0,
-                        "geometry":{ 
+                        "geometry":{
                            "type":"Point",
-                           "coordinates":[ 
+                           "coordinates":[
                               51.198222, 71.416985
                            ]
                         },
-                        "properties":{ 
-                           "balloonContentBody":"Body",
-                           "balloonContentFooter":"footer",
-                           "hintContent":"<strong>Текст подсказки</strong>"
+                        "properties":{
+                           "type": "Больница",
+                           "balloonContent":"Больница",
+                           "hintContent":"<strong>Больница</strong>",
+                           "clusterCaption": "Больница",
+                           "iconCaption": "Больница"
+                        },
+                         "options": {
+                            "preset": "islands#blueMedicalIcon"
                         }
-                    }';
+                    },
+                    {
+                        "type":"Feature",
+                        "id":1,
+                        "geometry":{
+                           "type":"Point",
+                           "coordinates":[
+                              51.198222, 71.5
+                           ]
+                        },
+                        "properties":{
+                           "type": "Аптека",
+                           "balloonContent":"Аптека",
+                           "hintContent":"<strong>Аптека</strong>",
+                           "clusterCaption": "Аптека",
+                           "iconCaption": "Аптека"
+                        },
+                         "options": {
+                            "preset": "islands#blueMedicalIcon"
+                        }
+                    },
+                    {
+                        "type":"Feature",
+                        "id":2,
+                        "geometry":{
+                           "type":"Point",
+                           "coordinates":[
+                              51.3, 71.5
+                           ]
+                        },
+                        "properties":{
+                           "type": "Кафе",
+                           "balloonContent":"Кафе",
+                           "hintContent":"<strong>Кафе</strong>",
+                           "clusterCaption": "Кафе",
+                           "iconCaption": "Кафе"
+                        },
+                         "options": {
+                            "preset": "islands#blueMedicalIcon"
+                        }
+                    }]';
 
-            $data = '{
-                        "type":"FeatureCollection",
-                        "features":[ 
-                            ' . $marks . '
-                        ]
-                    }';
 
-            return $data;
-        }
-
-        return $this->render('geography');
+        return $this->render('geography', ['hospitals' => $hospitals]);
     }
 }

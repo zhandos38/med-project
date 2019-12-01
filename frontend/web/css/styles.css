@@ -12,7 +12,10 @@
 
 .header-buttons {
   padding-top: 5px;
-  padding-right: 5px;
+  padding-right: 22px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .header-enter-btn {
@@ -20,11 +23,11 @@
   font-weight: 600;
   cursor: pointer;
   transition: all .5s ease-in-out;
-  padding-right: 5px;
+  padding-right: 25px;
 }
 
 .header-enter-btn:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .header-login-btn {
@@ -60,6 +63,10 @@
   padding: 8px;
 }
 
+.btn-info {
+  transition: 0.5s all ease;
+}
+
 .slider__description {
   /*background-color: #0099CC;*/
   /*opacity: 0.8;*/
@@ -91,12 +98,6 @@
 
 .navbar-light .navbar-nav .nav-link {
   padding: 5px;
-}
-
-.header-buttons {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
 }
 
 .header-login-btn {
@@ -887,6 +888,34 @@
   text-decoration: unset;
 }
 
+/* Vacation */
+.vacation__name {
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.vacation__date {
+  font-size: 14px;
+  color: #3a3a3a;
+}
+.vacation__box {
+  padding: 20px 15px;
+  margin-top: 20px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border-radius: 10px;
+  color: #0a0a0a;
+  transition: all .5s ease;
+}
+.vacation__box:hover {
+  opacity: 0.6;
+}
+.vacation__link {
+  color: #0a0a0a;
+}
+.vacation__link:hover {
+  text-decoration: unset;
+}
+
 /* Clinic case */
 .clinic-case__name {
   font-weight: 600;
@@ -1037,7 +1066,7 @@
 }
 
 .posts {
-  margin: 20px 0;
+  margin: 20px -15px 30px -15px;
 }
 
 .item {
