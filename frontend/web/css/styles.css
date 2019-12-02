@@ -1077,6 +1077,10 @@
   border-radius: 10px;
 }
 
+.help-block {
+  color: red;
+}
+
 @media only screen and (max-width: 992px) {
   .grid-item {
     width: 50%;

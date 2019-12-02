@@ -5,7 +5,7 @@
 /* @var $model \frontend\models\SignupForm */
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Зарегистрирвать';
 $this->params['breadcrumbs'][] = $this->title;
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'birthday') ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Зарегистрирвать', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::submitButton('Зарегистрироваться', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>

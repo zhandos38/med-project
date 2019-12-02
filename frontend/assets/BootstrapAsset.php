@@ -14,11 +14,10 @@ class BootstrapAsset extends AssetBundle
     public $css = [
         'css/bootstrap.min.css',
         'fonts/font-awesome.min.css',
-        'css/animate.css'
+        'css/animate.css',
     ];
     public $js = [
         'js/bootstrap.min.js',
-        'js/jquery.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
