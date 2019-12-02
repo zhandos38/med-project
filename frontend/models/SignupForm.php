@@ -16,9 +16,18 @@ class SignupForm extends Model
     public $address;
     public $email;
     public $password;
+    public $password_repeat;
     public $role;
     public $status;
     public $phone;
+    public $workplace;
+    public $degree;
+    public $speciality;
+    public $position;
+    public $description;
+    public $birthday;
+    public $is_subscribed;
+    public $city;
 
 
     /**
@@ -29,20 +38,23 @@ class SignupForm extends Model
         return [
             ['username', 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный логин уже зарегистрирован'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Данный email уже зарегистрирован'],
 
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            [['password', 'password_repeat'], 'required'],
+            [['password', 'password_repeat'], 'string', 'min' => 6],
+            ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Пароли не совпадают'],
 
-            [['full_name', 'address'], 'string'],
-            [['status', 'role'], 'integer']
+            [['workplace', 'phone', 'speciality', 'position', 'city'], 'required'],
+            [['full_name', 'address', 'workplace', 'degree', 'phone', 'speciality', 'position', 'description'], 'string'],
+            [['status', 'role', 'birthday', 'city'], 'integer'],
+            ['is_subscribed', 'boolean']
         ];
     }
 
@@ -53,7 +65,15 @@ class SignupForm extends Model
             'full_name' => 'Ф.И.О',
             'password' => 'Пароль',
             'phone' => 'Телефон',
-            'address' => 'Адрес'
+            'address' => 'Адрес',
+            'password_repeat' => 'Подтверждение пароля',
+            'workplace' => 'Ученая степень, звание',
+            'speciality' => 'Специальность',
+            'degree' => 'Должность',
+            'description' => 'Трудовая биография и образование',
+            'city' => 'Город (вашей учебы/работы)',
+            'birthday' => 'Дата рождения',
+            'position' => 'Должность',
         ];
     }
 
@@ -77,8 +97,14 @@ class SignupForm extends Model
         $user->full_name = $this->full_name;
         $user->address = $this->address;
         $user->phone = $this->phone;
+        $user->workplace = $this->workplace;
+        $user->speciality = $this->speciality;
+        $user->degree = $this->degree;
+        $user->description = $this->description;
+        $user->city = $this->city;
+        $user->birthday = $this->birthday;
+        $user->position = $this->position;
         return $user->save();
-
     }
 
     /**
