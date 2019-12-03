@@ -38,6 +38,22 @@ class User extends ActiveRecord implements IdentityInterface
     const ROLE_MANAGER = 'manager';
     const ROLE_DIRECTOR = 'director';
 
+    const CITY_NURSULTAN = 0;
+    const CITY_ALMATY = 1;
+    const CITY_SHYMKENT = 2;
+    const CITY_KARAGANDA = 3;
+    const CITY_KYZYLORDA = 4;
+    const CITY_TARAZ = 5;
+    const CITY_AKTAU = 6;
+    const CITY_ATYRAU = 7;
+    const CITY_AKTOBE = 8;
+    const CITY_USKAMAN = 9;
+    const CITY_SEMEY = 10;
+    const CITY_KUSTANAY = 11;
+    const CITY_PAVLODAR = 12;
+    const CITY_PETROPAVL = 13;
+    const CITY_TALDYKORGAN = 14;
+
 
     /**
      * {@inheritdoc}
@@ -260,5 +276,26 @@ class User extends ActiveRecord implements IdentityInterface
     public function getRoleLabel()
     {
         return ArrayHelper::getValue(static::getRoles(), $this->status);
+    }
+
+    public static function getCities()
+    {
+        return [
+            self::CITY_NURSULTAN => 'Нур-султан',
+            self::CITY_ALMATY => 'Алматы',
+            self::CITY_SHYMKENT => 'Шымкент',
+            self::CITY_KARAGANDA => 'Караганда',
+            self::CITY_KYZYLORDA => 'Кызылорда',
+            self::CITY_TARAZ => 'Тараз',
+            self::CITY_AKTAU => 'Актау',
+            self::CITY_ATYRAU => 'Атырау',
+            self::CITY_AKTOBE => 'Актобе',
+            self::CITY_USKAMAN => 'Уск-Каменагорск',
+            self::CITY_SEMEY => 'Семей',
+            self::CITY_KUSTANAY => 'Кустанай',
+            self::CITY_PAVLODAR => 'Павлодар',
+            self::CITY_PETROPAVL => 'Петропавл',
+            self::CITY_TALDYKORGAN => 'Талдыкорган',
+        ];
     }
 }

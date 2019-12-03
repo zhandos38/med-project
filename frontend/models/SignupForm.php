@@ -52,8 +52,8 @@ class SignupForm extends Model
             ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Пароли не совпадают'],
 
             [['workplace', 'phone', 'speciality', 'position', 'city'], 'required'],
-            [['full_name', 'address', 'workplace', 'degree', 'phone', 'speciality', 'position', 'description'], 'string'],
-            [['status', 'role', 'birthday', 'city'], 'integer'],
+            [['full_name', 'address', 'workplace', 'degree', 'phone', 'speciality', 'position', 'description', 'birthday'], 'string'],
+            [['status', 'role', 'city'], 'integer'],
             ['is_subscribed', 'boolean']
         ];
     }

@@ -7,7 +7,14 @@ use yii\helpers\Url;
             <div class="col header-column">
                 <div class="container header-container">
                     <div class="header-search"><input class="d-xl-flex navbar-search__input form-control" type="search" placeholder="Пойск по сайту"><i class="fa fa-search header__search-icon"></i></div>
-                    <div class="header-buttons"><div class="header-enter-btn">Вступить в общество</div><div class="header-login-btn"><i class="header-sign-in-icon fa fa-sign-in"></i>Войти</div></div>
+                    <div class="header-buttons">
+                        <a class="header-enter-btn" href="<?= Url::to(['site/signup']) ?>">
+                            Вступить в общество
+                        </a>
+                        <a class="header-login-btn" href="<?= Url::to(['site/login']) ?>">
+                            <i class="header-sign-in-icon fa fa-sign-in"></i>Войти
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

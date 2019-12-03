@@ -27,6 +27,7 @@
 }
 
 .header-enter-btn:hover {
+  text-decoration: none;
   opacity: 0.6;
 }
 
@@ -38,6 +39,7 @@
 }
 
 .header-login-btn:hover {
+  text-decoration: none;
   opacity: 0.8;
 }
 

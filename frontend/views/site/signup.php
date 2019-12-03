@@ -6,8 +6,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
+use common\models\User;
 
-$this->title = 'Зарегистрирвать';
+$this->title = 'Зарегистрироваться';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
@@ -33,7 +35,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'degree') ?>
 
-                <?= $form->field($model, 'phone') ?>
+                <?= $form->field($model, 'phone')->widget(MaskedInput::className(), [
+                    'mask' => '+7(999)999-99-99',
+                    'clientOptions' => [
+                        'removeMaskOnSubmit' => true
+                    ]
+                ]) ?>
 
                 <?= $form->field($model, 'speciality') ?>
 
@@ -41,9 +48,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'description')->textarea() ?>
 
-                <?= $form->field($model, 'city') ?>
+                <?= $form->field($model, 'city')->dropDownList(User::getCities(), ['prompt' => 'Выберите город']) ?>
 
-                <?= $form->field($model, 'birthday') ?>
+                <?= $form->field($model, 'birthday')->textInput(['id' => 'date-picker']) ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Зарегистрироваться', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
@@ -53,3 +60,16 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+<?php
+$js =<<<JS
+$('#date-picker').datepicker({
+    changeMonth: true,
+    changeYear: true,
+    yearRange: '1960:2000',
+    dateFormat : 'dd.mm.yy',
+    defaultDate: new Date(1985, 00, 01)
+});
+JS;
+
+$this->registerJs($js);
+?>

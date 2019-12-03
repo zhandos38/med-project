@@ -15,9 +15,12 @@ class AppAsset extends AssetBundle
         'css/navigation.css',
         'css/footer-clean.css',
         'css/styles.css',
+        'css/jquery-ui.css',
     ];
     public $js = [
-        'js/masonary.js'
+        'js/masonary.js',
+        'js/jquery-ui.js',
+        'js/jquery-ui-ru.js',
     ];
     public $depends = [
         'frontend\assets\BootstrapAsset'
