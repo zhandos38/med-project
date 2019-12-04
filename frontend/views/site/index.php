@@ -15,23 +15,23 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item">
                             <div class="jumbotron pulse animated hero-nature carousel-hero">
-                                <h1 class="hero-title">Hero Nature</h1>
+                                <h1 class="hero-title">Добро пожаловать!</h1>
                                 <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Мне интересно</a></p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="jumbotron pulse animated hero-photography carousel-hero">
-                                <h1 class="hero-title">Hero Photography</h1>
+                                <h1 class="hero-title">Добро пожаловать!</h1>
                                 <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Подробнее</a></p>
                             </div>
                         </div>
                         <div class="carousel-item active">
                             <div class="jumbotron pulse animated hero-technology carousel-hero">
-                                <h1 class="hero-title">Hero Technology</h1>
+                                <h1 class="hero-title">Добро пожаловать!</h1>
                                 <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Мне интересно</a></p>
+                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Подробнее</a></p>
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
                                         <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
                                     </div>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur explicabo odio! Adipisci aut dolores expedita maxime natus neque sed veritatis? Ea laborum neque nihil nobis omnis reiciendis ut voluptates.
+                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -214,7 +216,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
                                         <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
                                     </div>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad atque aut cupiditate deleniti earum, ex, exercitationem facilis inventore iusto magnam minus nobis odio officia optio quis sequi vel veniam!
+                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -224,7 +228,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
                                         <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
                                     </div>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi delectus eius eligendi eos eveniet fugit, illo iusto molestiae mollitia nemo odio odit qui quia quis, totam vel? Consequuntur, harum.
+                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -234,7 +240,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
                                         <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
                                     </div>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nostrum, temporibus! A ad cupiditate explicabo, impedit minima molestiae, molestias nam necessitatibus qui quo sed tempore totam unde ut velit veniam!
+                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -244,7 +252,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                         <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
                                         <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
                                     </div>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias consequatur debitis dicta eligendi facilis harum in iure possimus, tempore. Incidunt laudantium molestias natus nihil nobis quisquam tempore tenetur ut.
+                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -258,7 +268,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                             <i class="fa fa-commenting"></i><span class="card-comments-count">366</span>
                                         </div>
                                     </div>
-                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
+                                    <p class="card-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis consequuntur iusto natus numquam rem sint, tenetur unde! At beatae consequatur eligendi laboriosam magni mollitia optio ut. Id, neque suscipit.
+                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
                             </div>
                         </div>
                     </div>

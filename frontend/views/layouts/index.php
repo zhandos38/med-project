@@ -4,8 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\IndexAsset;
 use common\widgets\Alert;
@@ -31,7 +29,27 @@ IndexAsset::register($this);
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= Alert::widget() ?>
+
+        <?php if (Yii::$app->session->hasFlash('success')): ?>
+            <div class="flash-alert">
+                <div class="flash-alert__exit-btn">
+                    <i class="fa fa-close"></i>
+                </div>
+                <div class="flash-alert__container">
+                    <?= Yii::$app->session->getFlash('success') ?>
+                </div>
+            </div>
+<?php
+$js =<<<JS
+$('.flash-alert__exit-btn').click(function () {
+    $('.flash-alert').css('display', 'none');
+});
+JS;
+
+$this->registerJs($js);
+?>
+        <?php endif; ?>
+
         <?= $content ?>
 
 <?= $this->render('_footer') ?>

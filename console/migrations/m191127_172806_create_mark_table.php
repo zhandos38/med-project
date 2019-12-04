@@ -7,19 +7,20 @@ use yii\db\Migration;
  */
 class m191127_172806_create_mark_table extends Migration
 {
+    public $tableName = '{{%mark}}';
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%mark}}', [
+        $this->createTable($this->tableName, [
             'id' => $this->primaryKey(),
             'name' => $this->string(),
             'address' => $this->string(),
-            'building_category_id' => $this->tinyint(),
+            'building_category_id' => $this->tinyInteger(),
             'floors' => $this->integer(),
             'built_at' => $this->integer(),
-            'building_type_id' => $this->tinyint(),
+            'building_type_id' => $this->tinyInteger(),
             'destination' => $this->string(),
         ]);
     }
@@ -29,6 +30,6 @@ class m191127_172806_create_mark_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%mark}}');
+        $this->dropTable($this->tableName);
     }
 }

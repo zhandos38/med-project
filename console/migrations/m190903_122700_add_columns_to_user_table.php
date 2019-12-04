@@ -14,7 +14,7 @@ class m190903_122700_add_columns_to_user_table extends Migration
     public function safeUp()
     {
         $this->addColumn($this->tableName, 'full_name', $this->string()->after('username'));
-        $this->addColumn($this->tableName, 'phone', $this->integer()->after('email'));
+        $this->addColumn($this->tableName, 'phone', $this->string()->after('email'));
         $this->addColumn($this->tableName, 'address', $this->string()->after('phone'));
         $this->addColumn($this->tableName, 'code_number', $this->integer()->after('address'));
         $this->addColumn($this->tableName, 'role', $this->string()->after('code_number'));
