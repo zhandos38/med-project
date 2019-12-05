@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\Post;
+use common\models\Tutorial;
 use common\models\Vacation;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -304,5 +305,16 @@ class SiteController extends Controller
         ]);
 
         return $this->render('vacations', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionForPatients()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Tutorial::find(),
+            'pagination' => [
+                'pageSize' => 6
+            ]
+        ]);
+        return $this->render('for-patients', ['dataProvider' => $dataProvider]);
     }
 }

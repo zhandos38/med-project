@@ -81,7 +81,7 @@ use yii\helpers\Url;
                         </div>
                     </li>
                     <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Пациентам</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?= Url::to(['site/for-patients']) ?>">Пациентам</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= Url::to(['site/contacts']) ?>">Контакты</a></li>
                     <li class="nav-item" role="presentation"></li>
                 </ul>

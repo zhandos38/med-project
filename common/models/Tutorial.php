@@ -14,6 +14,7 @@ use Yii;
  * @property string $file
  * @property int $created_at
  * @property int $updated_at
+ * @property int $type_id [int(11)]
  */
 class Tutorial extends \yii\db\ActiveRecord
 {
@@ -43,7 +44,7 @@ class Tutorial extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_at', 'updated_at'], 'integer'],
+            [['created_at', 'updated_at', 'tutorial'], 'integer'],
             [['name', 'description', 'image', 'file'], 'string', 'max' => 255],
             [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
             [['tutorialFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx, djvu'],
@@ -62,7 +63,8 @@ class Tutorial extends \yii\db\ActiveRecord
             'image' => 'Рисунок',
             'file' => 'Файл',
             'created_at' => 'Создано в',
-            'updated_at' => 'Обнавлено в'
+            'updated_at' => 'Обнавлено в',
+            'type_id' => 'Тип документа'
         ];
     }
 
