@@ -102,4 +102,19 @@ class Mark extends \yii\db\ActiveRecord
     {
         return ArrayHelper::getValue($this->getTypesLabel(), $this->type_id);
     }
+
+    public static function getTypesIcon()
+    {
+        return [
+            self::TYPE_HOSPITAL => 'islands#blueMedicalIcon',
+            self::TYPE_RESTAURANT => 'islands#blueFoodIcon',
+            self::TYPE_SHOP => 'islands#blueShoppingIcon',
+            self::TYPE_PHARMACY => 'islands#blueMedicalIcon',
+        ];
+    }
+
+    public function getTypeIcon()
+    {
+        return ArrayHelper::getValue($this->getTypesIcon(), $this->type_id);
+    }
 }

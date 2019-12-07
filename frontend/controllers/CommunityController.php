@@ -13,6 +13,8 @@ use common\models\Document;
 use common\models\Mark;
 use common\models\Member;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Json;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 
 class CommunityController extends Controller
@@ -95,33 +97,31 @@ class CommunityController extends Controller
 
     public function actionGeography()
     {
-        $marks = '[';
         $marksModel = Mark::find()->all();
-        foreach ($marksModel as $mark) {
-            $typeLabel = $mark->getTypeLabel();
-            $marks .= '{
-                        'type':'Feature',
-                        'id': $mark->id,
-                        'geometry':{
-                           'type':'Point',
-                           'coordinates':[
-                              $mark->latitude, $mark->longitude
-                           ]
-                        },
-                        'properties':{
-                           'type': $typeLabel,
-                           'balloonContent': "$mark->destination",
-                           'hintContent':'<strong>$typeLabel</strong>',
-                           'clusterCaption': $typeLabel,
-                           'iconCaption': $typeLabel
-                        },
-                         'options': {
-                            'preset': 'islands#blueMedicalIcon'
-                        }
-                    },';
-        }
-        $marks .= ']';
 
-        return $this->render('geography', ['marks' => $marks]);
+        foreach ($marksModel as $mark) {
+            $marks[] = [
+                'type' => "Feature",
+                "id" => $mark->id,
+                "geometry" => [
+                    "type" => "Point",
+                    "coordinates" => [
+                        $mark->latitude, $mark->longitude
+                    ]
+                ],
+                "properties" => [
+                    "type" => $mark->getTypeLabel(),
+                    "balloonContent" => $mark->destination,
+                    "hintContent" => $mark->getTypeLabel(),
+                    "clusterCaption" => $mark->getTypeLabel(),
+                    "iconCaption" => $mark->getTypeLabel()
+                ],
+                "options" => [
+                    "preset" => $mark->getTypeIcon(),
+                ]
+            ];
+        }
+
+        return $this->render('geography', ['marks' => Json::encode($marks)]);
     }
 }

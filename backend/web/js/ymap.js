@@ -1,14 +1,9 @@
-var coordsCities = [];
-coordsCities[1] = [43.238293, 76.945465];
-coordsCities[2] = [51.144759, 71.419836];
-coordsCities[3] = [42.315514, 69.586907];
-
 if(typeof ymaps !== 'undefined'){
     ymaps.ready(init);
 }
 
 function init () {
-    var center   = [42.315514, 69.586907];
+    var center   = [51.198222, 71.416985];
     myMap = new ymaps.Map("map", {
         center: center,
         zoom: 12

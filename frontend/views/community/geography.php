@@ -19,11 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <input class="filter-checkbox" type="checkbox" value="Кафе" checked>Кафе
 </div>
 <?php
-
 $js =<<<JS
 ymaps.ready(init);
 
 function init () {
+    let marks = $marks;
     var myMap = new ymaps.Map("map", {
             center: [51.198222, 71.416985],
             zoom: 10
@@ -40,9 +40,9 @@ function init () {
     
     let hospitals = {
         "type": "FeatureCollection",
-        "features": $marks
+        "features": marks
     };
-    objectManager.add(hospitals);
+    objectManager.add(marks);
     objectManager.events.add('click', function(e) {
         console.log('Привет яндекс ' + e.get('objectId'));
     });
