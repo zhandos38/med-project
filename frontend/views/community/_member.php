@@ -1,6 +1,6 @@
 <?php
 /* @var \common\models\Member $model */
-$imgPath = Yii::$app->params['staticDomain'] . 'web/members/';
+$imgPath = Yii::$app->params['staticDomain'] . '/web/members/';
 ?>
 <a class="member__link" href="<?= \yii\helpers\Url::to(['community/member', 'id' => $model->id]) ?>">
     <div class="member__box">

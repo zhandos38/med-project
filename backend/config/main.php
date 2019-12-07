@@ -15,6 +15,9 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+        'rbac' =>  [
+            'class' => 'backend\modules\rbac\Module',
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],

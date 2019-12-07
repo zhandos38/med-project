@@ -21,7 +21,7 @@ class m191127_172806_create_mark_table extends Migration
             'floors' => $this->integer(),
             'built_at' => $this->integer(),
             'building_type_id' => $this->tinyInteger(),
-            'destination' => $this->string(),
+            'destination' => $this->text(),
         ]);
     }
 

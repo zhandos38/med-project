@@ -10,6 +10,7 @@ namespace frontend\controllers;
 
 
 use common\models\Document;
+use common\models\Mark;
 use common\models\Member;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -94,68 +95,33 @@ class CommunityController extends Controller
 
     public function actionGeography()
     {
-        $hospitals = '[{
-                        "type":"Feature",
-                        "id":0,
-                        "geometry":{
-                           "type":"Point",
-                           "coordinates":[
-                              51.198222, 71.416985
+        $marks = '[';
+        $marksModel = Mark::find()->all();
+        foreach ($marksModel as $mark) {
+            $typeLabel = $mark->getTypeLabel();
+            $marks .= '{
+                        'type':'Feature',
+                        'id': $mark->id,
+                        'geometry':{
+                           'type':'Point',
+                           'coordinates':[
+                              $mark->latitude, $mark->longitude
                            ]
                         },
-                        "properties":{
-                           "type": "Больница",
-                           "balloonContent":"<h6>2-ая городская больница</h6><div><i class=\"fa fa-location-arrow\"></i> Центральный район, проспект Победителей, 11</div><div><b>Время работы:</b> пн-пт: 10.00-20.00, сб-вс: 10.00-18.00</div><div class=\"map__marker-block\"><p><b>Вход:</b> количество ступеней: 4, пандус (количество маршей: 2), Уклон не более 1/12, имеются поручниПри двух наклонных маршах, пандус не имеет промежуточной площадки.</p><p><b>Входные двери:</b> 2-створчатая, ширина створки: 74 см и более, высота порога: 3 см, наличие тамбура: есть, Двери открываются туго, но широко в обе стороны</p><p><b>Внутреннее пространство:</b> пандус, За входными дверями расположен пандус уклон 11% (соотношение высоты к длине 1/9) ведущий к торговым рядам на 1-й этаж.</p><p><b>Туалет:</b> Общественный</p></div>",
-                           "hintContent":"<strong>Больница</strong>",
-                           "clusterCaption": "Больница",
-                           "iconCaption": "Больница"
+                        'properties':{
+                           'type': $typeLabel,
+                           'balloonContent': "$mark->destination",
+                           'hintContent':'<strong>$typeLabel</strong>',
+                           'clusterCaption': $typeLabel,
+                           'iconCaption': $typeLabel
                         },
-                         "options": {
-                            "preset": "islands#blueMedicalIcon"
+                         'options': {
+                            'preset': 'islands#blueMedicalIcon'
                         }
-                    },
-                    {
-                        "type":"Feature",
-                        "id":1,
-                        "geometry":{
-                           "type":"Point",
-                           "coordinates":[
-                              51.198222, 71.5
-                           ]
-                        },
-                        "properties":{
-                           "type": "Аптека",
-                           "balloonContent":"Аптека",
-                           "hintContent":"<strong>Аптека</strong>",
-                           "clusterCaption": "Аптека",
-                           "iconCaption": "Аптека"
-                        },
-                         "options": {
-                            "preset": "islands#blueMedicalIcon"
-                        }
-                    },
-                    {
-                        "type":"Feature",
-                        "id":2,
-                        "geometry":{
-                           "type":"Point",
-                           "coordinates":[
-                              51.3, 71.5
-                           ]
-                        },
-                        "properties":{
-                           "type": "Кафе",
-                           "balloonContent":"Кафе",
-                           "hintContent":"<strong>Кафе</strong>",
-                           "clusterCaption": "Кафе",
-                           "iconCaption": "Кафе"
-                        },
-                         "options": {
-                            "preset": "islands#blueMedicalIcon"
-                        }
-                    }]';
+                    },';
+        }
+        $marks .= ']';
 
-
-        return $this->render('geography', ['hospitals' => $hospitals]);
+        return $this->render('geography', ['marks' => $marks]);
     }
 }

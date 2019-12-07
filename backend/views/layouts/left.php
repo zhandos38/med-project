@@ -26,6 +26,7 @@
                     ['label' => 'Пользователи', 'icon' => 'fas fa-user', 'url' => ['user/index']],
                     ['label' => 'Члены общества', 'icon' => 'fas fa-user', 'url' => ['members/index']],
                     ['label' => 'Вакансии', 'icon' => 'fas fa-user', 'url' => ['vacation/index']],
+                    ['label' => 'Карта', 'icon' => 'fas fa-user', 'url' => ['mark/index']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [

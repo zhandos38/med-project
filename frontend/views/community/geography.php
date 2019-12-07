@@ -40,7 +40,7 @@ function init () {
     
     let hospitals = {
         "type": "FeatureCollection",
-        "features": $hospitals
+        "features": $marks
     };
     objectManager.add(hospitals);
     objectManager.events.add('click', function(e) {

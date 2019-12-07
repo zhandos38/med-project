@@ -145,7 +145,7 @@ class Post extends \yii\db\ActiveRecord
 
     public function beforeSave($insert)
     {
-        if (!$this->image)
+        if ($this->imageFile)
             $this->image = $this->imageFile->baseName . '.' . $this->imageFile->extension;
         return true;
     }
