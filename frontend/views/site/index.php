@@ -4,7 +4,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'Главная страница | KSIOR';
-$imgPath = Yii::$app->params['staticDomain'];
+$imgPath = Yii::$app->params['staticDomain'] . '/';
 setlocale(LC_ALL,'ru_RU.utf8');
 ?>
 <section id="slider">
