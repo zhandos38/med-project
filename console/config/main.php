@@ -30,6 +30,11 @@ return [
                 ],
             ],
         ],
+        'mailer' => [
+            'class' => 'boundstate\mailgun\Mailer',
+            'key' => 'pubkey-281e64791f4870b2919787222174b44c',
+            'domain' => 'mg.ksior.kz',
+        ],
     ],
     'params' => $params,
 ];
