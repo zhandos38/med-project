@@ -23,8 +23,6 @@ mihaildev\elfinder\Assets::noConflict($this);
         'editorOptions' => ElFinder::ckeditorOptions('elfinder',[/* Some CKEditor Options */]),
     ]); ?>
 
-<!--    --><?//= $form->field($model, 'views')->textInput() ?>
-
     <?= $form->field($model, 'type_id')->dropDownList(\common\models\Post::getTypes(), ['prompt' => 'Выбрать тип']) ?>
 
     <?= $form->field($model, 'author')->textInput() ?>
