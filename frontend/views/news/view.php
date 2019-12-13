@@ -7,7 +7,7 @@ $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news/index']];
 $this->params['breadcrumbs'][] = $this->title;
 
-$imgPath = Yii::$app->params['staticDomain'] . 'web/posts/';
+$imgPath = Yii::$app->params['staticDomain'] . '/posts/';
 ?>
 <h2 class="news__title">
     <strong>
