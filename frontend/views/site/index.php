@@ -116,7 +116,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     <div class="col">
                         <section>
                             <div class="photo-card" style="background-color: #fff;">
-                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);"></div>
+                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'posts/' . $latestExpertOpinion->image ?>);"></div>
                                 <div class="photo-details">
                                     <h1 style="color: rgb(0,0,0);"><strong><?= $latestExpertOpinion->topic ?></strong><br></h1>
                                     <p style="color: rgb(0,0,0);"><?= $latestExpertOpinion->title ?><br></p>
