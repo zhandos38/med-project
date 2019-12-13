@@ -13,7 +13,7 @@ use common\models\Post;
 $this->title = 'Посты';
 $this->params['breadcrumbs'][] = $this->title;
 
-$imgPath = Yii::$app->params['staticDomain'] . '/web/posts/';
+$imgPath = Yii::$app->params['staticDomain'] . '/posts/';
 ?>
 <div class="post-index">
 
