@@ -26,7 +26,6 @@
         "kartik-v/yii2-date-range": "dev-master",
         "yii2mod/yii2-comments": "*",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "php-http/guzzle6-adapter":"^1.0",
         "boundstate/yii2-mailgun": "*",
         "himiklab/yii2-recaptcha-widget" : "*"
     },
