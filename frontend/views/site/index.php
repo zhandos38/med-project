@@ -64,7 +64,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     <div class="col">
                         <section>
                             <div class="photo-card">
-                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'web/posts/' . $latestNews->image ?>);"></div>
+                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'posts/' . $latestNews->image ?>);"></div>
                                 <div class="photo-details">
                                     <div class="photo-heading">
                                         <div>
@@ -93,7 +93,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     <div class="col">
                         <section>
                             <div class="photo-card" style="background-color: rgb(0,35,42);">
-                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'web/posts/' . $latestClinicCase->image ?>);"></div>
+                                <div class="photo-background" style="background-image:url(<?= $imgPath . 'posts/' . $latestClinicCase->image ?>);"></div>
                                 <div class="photo-details">
                                     <div class="photo-heading"><span class="photo-author"><i class="fa fa-bullhorn"></i>&nbsp;<?= $latestClinicCase->author ?><br></span></div>
                                     <p style="padding-top: 5px;"><?= $latestClinicCase->title ?><br></p>
