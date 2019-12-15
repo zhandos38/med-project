@@ -1,5 +1,6 @@
 <?php
 use common\models\Post;
+use rmrevin\yii\module\Comments;
 
 /* @var Post $model */
 
@@ -22,3 +23,7 @@ $imgPath = Yii::$app->params['staticDomain'] . '/posts/';
     <h2>Комментарии</h2>
     <p><em>*Оставлять комментарии могут только зарегистрированные пользователи.&nbsp;</em><a href="https://rnoik.ru/personal/?register=yes"><em>Зарегистрируйтесь</em></a><em>&nbsp;или&nbsp;</em><a href="https://rnoik.ru/personal/"><em>авторизируйтесь</em></a><br></p>
 </div>
+<?=  Comments\widgets\CommentListWidget::widget([
+    'entity' => (string) 'post-' . $model->id, // type and id
+]);
+?>

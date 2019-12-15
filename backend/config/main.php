@@ -13,11 +13,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'comments' => [
+            'class' => 'rmrevin\yii\module\Comments\Module',
+            'userIdentityClass' => 'common\models\User',
+            'useRbac' => true,
+        ]
+    ],
     'components' => [
-        'rbac' =>  [
-            'class' => 'backend\modules\rbac\Module',
-        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],

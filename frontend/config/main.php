@@ -11,11 +11,6 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'modules' => [
-        'commenting' => [
-            'class' => 'yii2mod\comments\Module',
-        ],
-    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',

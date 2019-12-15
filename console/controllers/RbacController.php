@@ -4,6 +4,8 @@ namespace console\controllers;
 
 use Yii;
 use yii\console\Controller;
+use \rmrevin\yii\module\Comments\Permission;
+use \rmrevin\yii\module\Comments\rbac\ItsMyComment;
 /**
  * Инициализатор RBAC выполняется в консоли php yii rbac/init
  */
@@ -16,6 +18,7 @@ class RbacController extends Controller {
         }
 
         $auth = Yii::$app->authManager;
+
         $auth->removeAll();
 
         // Создадим роли админа и редактора новостей
@@ -23,6 +26,9 @@ class RbacController extends Controller {
         $admin->description = 'Роль для админа';
         $manager = $auth->createRole('manager');
         $manager->description = 'Роль для менеджера';
+
+        /* User comments */
+        $ItsMyCommentRule = new ItsMyComment();
 
         $auth->add($admin);
         $auth->add($manager);
@@ -43,6 +49,30 @@ class RbacController extends Controller {
         // Запишем все разрешения в БД
         $auth->add($viewAdminPage);
         $auth->add($updateUsers);
+        $auth->add($ItsMyCommentRule);
+
+        $auth->add(new \yii\rbac\Permission([
+            'name' => Permission::CREATE,
+            'description' => 'Can create own comments',
+        ]));
+        $auth->add(new \yii\rbac\Permission([
+            'name' => Permission::UPDATE,
+            'description' => 'Can update all comments',
+        ]));
+        $auth->add(new \yii\rbac\Permission([
+            'name' => Permission::UPDATE_OWN,
+            'ruleName' => $ItsMyCommentRule->name,
+            'description' => 'Can update own comments',
+        ]));
+        $auth->add(new \yii\rbac\Permission([
+            'name' => Permission::DELETE,
+            'description' => 'Can delete all comments',
+        ]));
+        $auth->add(new \yii\rbac\Permission([
+            'name' => Permission::DELETE_OWN,
+            'ruleName' => $ItsMyCommentRule->name,
+            'description' => 'Can delete own comments',
+        ]));
 
         $auth->addChild($admin, $updateUsers);
 
