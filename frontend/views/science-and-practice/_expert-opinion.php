@@ -2,7 +2,7 @@
 /* @var \common\models\Post $model */
 $filePath = Yii::$app->params['staticDomain'] . '/posts/';
 ?>
-<a class="expert-opinion__link" href="<?= \yii\helpers\Url::to(['science-and-practice/video-broadcast', 'id' => $model->id])?>">
+<a class="expert-opinion__link" href="<?= \yii\helpers\Url::to(['science-and-practice/expert-opinion', 'id' => $model->id])?>">
     <div class="expert-opinion__box">
         <div class="expert-opinion__image-wrapper">
             <img class="expert-opinion__image" src="<?= $filePath . $model->image ?>" width="100%">

@@ -120,7 +120,13 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                 <div class="photo-details">
                                     <h1 style="color: rgb(0,0,0);"><strong><?= $latestExpertOpinion->topic ?></strong><br></h1>
                                     <p style="color: rgb(0,0,0);"><?= $latestExpertOpinion->title ?><br></p>
-                                    <div><a href="#"><?= $latestExpertOpinion->author ?><br></a></div>
+                                    <div><span class="photo-author"><i class="fa fa-bullhorn"></i>&nbsp;<?= $latestClinicCase->author ?><br><br></span></div>
+                                    <div class="photo-tags">
+                                        <ul>
+                                            <li><a href="<?= Url::to(['science-and-practice/expert-opinion', 'id' => $latestExpertOpinion->id]) ?>" style="background-color: #009cbf;">Читать</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/expert-opinions']) ?>" style="background-color: #009cbf;">Другие мнения</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </section>
