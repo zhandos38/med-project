@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <span>Скачать устав</span>
             </a>
             <div class="statute__document-info">
-                PDF, 2.6 MB
+                PDF, 9.8 MB
             </div>
         </div>
     </div>
