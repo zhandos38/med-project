@@ -8,6 +8,7 @@ use yii\web\ForbiddenHttpException;
 $this->title = 'Устав';
 $this->params['breadcrumbs'][] = ['label' => 'Общество', 'url' => ['about']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <h2 class="statute__title"><strong>Устав</strong></h2>
 <div class="row">
@@ -20,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <p>Изменения и дополнения в Устав утверждены Конференцией — 1 июня 2000 года</p>
         </div>
         <div class="statute__download">
-            <a class="blue-link-button btn" href="#">
+            <a class="blue-link-button btn" href="/documents/statute.pdf" download>
                 <span>Скачать устав</span>
             </a>
             <div class="statute__document-info">
