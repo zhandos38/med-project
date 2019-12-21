@@ -43,6 +43,11 @@ return [
                 'to_specialist/vacations' => 'site/vacations',
             ],
         ],
+        'mailer' => [
+            'class' => \YarCode\Yii2\Mailgun\Mailer::class,
+            'domain' => 'mg.ksior.kz',
+            'apiKey' => '636ba835c63f4b0f692ceee5f5cf38b5-059e099e-a68e8266',
+        ],
     ],
     'container' => [
         'definitions' => [

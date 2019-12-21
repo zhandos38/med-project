@@ -1,10 +1,11 @@
 <?php
 namespace frontend\models;
 
+use Mailgun\Mailgun;
 use Yii;
 use yii\base\Model;
 use common\models\User;
-use yii\helpers\VarDumper;
+use yii\helpers\Html;use yii\helpers\VarDumper;
 
 /**
  * Signup form
@@ -114,15 +115,28 @@ class SignupForm extends Model
      */
     protected function sendEmail($user)
     {
-        return Yii::$app
-            ->mailer
-            ->compose(
-                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-                ['user' => $user]
-            )
-            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
-            ->setTo($this->email)
-            ->setSubject('Account registration at ' . Yii::$app->name)
-            ->send();
+        $verifyLink = Yii::$app->urlManager->createAbsoluteUrl(['site/verify-email', 'token' => $user->verification_token]);
+        $link = Html::a(Html::encode($verifyLink), $verifyLink);
+        $userName = $user->full_name;
+
+        $template = "<div class=\"verify-email\">
+                        <p>Здравствуйте $userName,</p>
+                    
+                        <p>Перейдите по ссылке чтобы подтвердить данную электронную почту</p>
+                    
+                        <p>$link</p>
+                    </div>";
+
+        // First, instantiate the SDK with your API credentials
+        $mg = Mailgun::create(Yii::$app->params['mailApiKey']); // For US servers
+
+        $mg->messages()->send('mg.ksior.kz', [
+            'from'    => 'info@ksior.kz',
+            'to'      => 'zhandos_38@mail.ru',
+            'subject' => 'The PHP SDK is awesome!',
+            'html' => $template
+        ]);
+
+        return true;
     }
 }
