@@ -133,27 +133,38 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 item">
+            <div class="col-sm-3 item">
                 <div class="posts__item-title"><span>Журнал</span></div>
                 <div class="row">
                     <div class="col">
                         <section>
                             <div class="photo-card">
-                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;);">
+                                <div class="photo-background" style="background-image:url(&quot;img/product-aeon-feature.jpg&quot;); width: 100%; border-radius: 10px;">
                                     <div class="magazine-download__link-wrapper">
-                                        <a href="#" class="magazine-download__link">
-                                            <div class="magazine-download">
-                                                Скачать журнал
-                                            </div>
-                                        </a>
+                                        <div class="photo-tags">
+                                            <ul>
+                                                <li><a href="#" style="background-color: #009cbf;">Скачать журнал</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="photo-details">
-                                    <h1>Lorem ipsum</h1>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 item">
+                <div class="posts__item-title"><span>Мед калькулятор</span></div>
+                <div class="row">
+                    <div class="col">
+                        <section>
+                            <div class="photo-card">
+                                <div class="photo-details" style="width: 100%">
+                                    <h1></h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales elementum mi non hendrerit. Proin tempor facilisis felis nec ultrices.&nbsp;</p>
                                     <div class="photo-tags">
                                         <ul>
-                                            <li><a href="#">Мед калькулятор</a></li>
+                                            <li><a href="#">Открыть</a></li>
                                         </ul>
                                     </div>
                                 </div>
