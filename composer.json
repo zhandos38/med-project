@@ -25,9 +25,11 @@
         "yiisoft/yii2-bootstrap4": "^2.0",
         "kartik-v/yii2-date-range": "dev-master",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "boundstate/yii2-mailgun": "*",
         "himiklab/yii2-recaptcha-widget" : "*",
-        "rmrevin/yii2-comments": "~1.4"
+        "rmrevin/yii2-comments": "~1.4",
+        "mailgun/mailgun-php": "^3.0",
+        "kriswallsmith/buzz": "^1.0",
+        "nyholm/psr7": "^1.2"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

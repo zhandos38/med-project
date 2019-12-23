@@ -17,7 +17,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         Yii::$app->mailer->compose()
-            ->setFrom('postmaster@mg.ksior.kz')
+            ->setFrom('info@ksior.kz')
             ->setTo('zhandos_38@mail.ru') // кому отправляем - реальный адрес куда придёт письмо формата asdf @asdf.com
             ->setSubject('Hello from Ksior') // тема письма
             ->setTextBody("Hello you are the best dude") // текст письма без HTML
