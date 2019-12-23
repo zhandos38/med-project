@@ -2,7 +2,7 @@
 /* @var $model \common\models\Event */
 ?>
 <div class="event__item-wrapper">
-    <a class="event__item" href="<?= \yii\helpers\Url::to(['news/view', 'id' => $model->id]) ?>">
+    <a class="event__item" href="<?= \yii\helpers\Url::to(['events/view', 'id' => $model->id]) ?>">
         <div class="event__box">
             <div class="event__name">
                 <?= $model->name ?>

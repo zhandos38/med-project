@@ -49,6 +49,13 @@ return [
             'apiKey' => '636ba835c63f4b0f692ceee5f5cf38b5-059e099e-a68e8266',
         ],
     ],
+    'modules' => [
+        'comments' => [
+            'class' => 'rmrevin\yii\module\Comments\Module',
+            'userIdentityClass' => 'common\models\User',
+            'useRbac' => true,
+        ]
+    ],
     'container' => [
         'definitions' => [
             \yii\widgets\LinkPager::class => \yii\bootstrap4\LinkPager::class,

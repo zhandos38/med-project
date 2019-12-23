@@ -11,10 +11,26 @@ namespace frontend\controllers;
 
 use common\models\Event;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 
 class EventsController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['?', '@']
+                    ]
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
@@ -25,6 +41,13 @@ class EventsController extends Controller
         ]);
 
         return $this->render('index', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionView($id)
+    {
+        $model = Event::findOne(['id' => $id]);
+
+        return $this->render('view', ['model' => $model]);
     }
 
     public function actionLast()

@@ -35,6 +35,7 @@ use yii\web\IdentityInterface;
  * @property int $city [int(11)]
  * @property int $birthday [int(11)]
  * @property string $position [varchar(255)]
+ * @property string $avatar_url [varchar(255)]
  */
 class User extends ActiveRecord implements IdentityInterface, CommentatorInterface
 {
@@ -309,12 +310,12 @@ class User extends ActiveRecord implements IdentityInterface, CommentatorInterfa
 
     public function getCommentatorAvatar()
     {
-        return $this->avatar_url;
+        return $this->avatar_url ? $this->avatar_url : 'default-user.png';
     }
 
     public function getCommentatorName()
     {
-        return $this->name;
+        return $this->full_name;
     }
 
     public function getCommentatorUrl()

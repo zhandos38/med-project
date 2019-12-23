@@ -24,14 +24,14 @@ class RbacController extends Controller {
         // Создадим роли админа и редактора новостей
         $admin = $auth->createRole('admin');
         $admin->description = 'Роль для админа';
-        $manager = $auth->createRole('manager');
-        $manager->description = 'Роль для менеджера';
+        $user = $auth->createRole('user');
+        $user->description = 'Роль для пользователя';
 
         /* User comments */
         $ItsMyCommentRule = new ItsMyComment();
 
         $auth->add($admin);
-        $auth->add($manager);
+        $auth->add($user);
 
         // Создаем наше правило, которое позволит проверить автора новости
 //        $authorRule = new \app\rbac\AuthorRule;
@@ -51,29 +51,37 @@ class RbacController extends Controller {
         $auth->add($updateUsers);
         $auth->add($ItsMyCommentRule);
 
-        $auth->add(new \yii\rbac\Permission([
-            'name' => Permission::CREATE,
-            'description' => 'Can create own comments',
-        ]));
+        $createOwnComment = $auth->createPermission(Permission::CREATE);
+        $createOwnComment->description = 'Can create own comments';
+        $auth->add($createOwnComment);
+
+
         $auth->add(new \yii\rbac\Permission([
             'name' => Permission::UPDATE,
             'description' => 'Can update all comments',
         ]));
-        $auth->add(new \yii\rbac\Permission([
-            'name' => Permission::UPDATE_OWN,
-            'ruleName' => $ItsMyCommentRule->name,
-            'description' => 'Can update own comments',
-        ]));
+        $updateOwnComment = $auth->createPermission(Permission::UPDATE_OWN);
+        $updateOwnComment->description = 'Can update own comments';
+        $updateOwnComment->ruleName = $ItsMyCommentRule->name;
+        $auth->add($updateOwnComment);
+
         $auth->add(new \yii\rbac\Permission([
             'name' => Permission::DELETE,
             'description' => 'Can delete all comments',
         ]));
-        $auth->add(new \yii\rbac\Permission([
-            'name' => Permission::DELETE_OWN,
-            'ruleName' => $ItsMyCommentRule->name,
-            'description' => 'Can delete own comments',
-        ]));
 
+        $deleteOwnComment = $auth->createPermission(Permission::DELETE_OWN);
+        $deleteOwnComment->description = 'Can delete own comments';
+        $deleteOwnComment->ruleName = $ItsMyCommentRule->name;
+        $auth->add($deleteOwnComment);
+
+        $auth->addChild($user, $createOwnComment);
+        $auth->addChild($user, $updateOwnComment);
+        $auth->addChild($user, $deleteOwnComment);
+
+        $auth->addChild($admin, $createOwnComment);
+        $auth->addChild($admin, $updateOwnComment);
+        $auth->addChild($admin, $deleteOwnComment);
         $auth->addChild($admin, $updateUsers);
 
         // Еще админ имеет собственное разрешение - «Просмотр админки»
