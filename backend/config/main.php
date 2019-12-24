@@ -57,7 +57,7 @@ return [
             'class' => 'mihaildev\elfinder\PathController',
             'access' => ['@'],
             'root' => [
-                'baseUrl'=>'http://static.med-project',
+                'baseUrl'=>Yii::$app->params['staticDomain'],
                 'basePath'=>'@static/web',
                 'path' => 'upload/global',
                 'name' => 'Global'
