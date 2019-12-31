@@ -20,11 +20,7 @@ $imgPath = Yii::$app->params['staticDomain'] . '/event/';
 <div class="event__content-view">
     <?= $model->content ?>
 </div>
-<div class="subscribe-btn">
-    div.subscribe-title
-</div>
-<div class="event__comment">
-    <h2>Комментарии</h2>
+<div class="comments__wrapper">
     <p><em>*Оставлять комментарии могут только зарегистрированные пользователи.&nbsp;</em><a href="<?= Url::to(['site/signup']) ?>"><em>Зарегистрируйтесь</em></a><em>&nbsp;или&nbsp;</em><a href="<?= Url::to(['site/login']) ?>"><em>авторизируйтесь</em></a><br></p>
 </div>
 <?=  Comments\widgets\CommentListWidget::widget([

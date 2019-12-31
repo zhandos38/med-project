@@ -1186,6 +1186,10 @@
   color: red;
 }
 
+.comments__wrapper {
+  margin-top: 40px;
+}
+
 @media only screen and (max-width: 992px) {
   .grid-item {
     width: 50%;

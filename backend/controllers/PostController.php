@@ -72,6 +72,8 @@ class PostController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->user_id = Yii::$app->user->identity->getId();
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->created_at = time();
+            $model->updated_at = time();
             if ($model->save() && $model->upload()) {
                 return $this->redirect(['index']);
             }
@@ -96,6 +98,7 @@ class PostController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->updated_at = time();
             if ($model->save() && $model->upload()) {
                 return $this->redirect(['index']);
             }

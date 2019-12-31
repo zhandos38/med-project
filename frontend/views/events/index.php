@@ -6,6 +6,7 @@ use yii\bootstrap4\LinkPager;
 $this->title = 'Мероприятия';
 $this->params['breadcrumbs'][] = $this->title;
 
+setlocale(LC_ALL, "");
 setlocale(LC_ALL,'ru_RU.utf8');
 ?>
 <h2 class="news__title"><?= $this->title ?></h2>
