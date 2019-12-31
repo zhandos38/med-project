@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use common\models\Post;
 use common\models\Tutorial;
 use common\models\Vacation;
+use frontend\models\PostSearch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -316,5 +317,16 @@ class SiteController extends Controller
             ]
         ]);
         return $this->render('for-patients', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionSearch()
+    {
+        $searchModel = new PostSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('search', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
+        ]);
     }
 }
