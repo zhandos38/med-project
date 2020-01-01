@@ -59,7 +59,7 @@ return [
             'root' => [
                 'baseUrl'=>Yii::$app->params['staticDomain'],
                 'basePath'=>'@static/web',
-                'path' => Yii::$app->params['staticDomain'] . 'upload/global',
+                'path' => 'upload/global',
                 'name' => 'Global'
             ],
         ]
