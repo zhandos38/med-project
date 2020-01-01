@@ -5,7 +5,7 @@ $imgPath = Yii::$app->params['staticDomain'];
     <div class="news__item">
         <div class="row">
             <div class="col-md-4 news__img-wrapper">
-                <img class="img-fluid" src="<?= $imgPath . '/posts/' . $model->image ?>">
+                <img class="img-fluid" src="<?= $imgPath . 'posts/' . $model->image ?>">
             </div>
             <div class="col-md-8 news__content-side">
                 <div class="news__content">

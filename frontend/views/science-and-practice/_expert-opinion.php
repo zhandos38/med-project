@@ -1,6 +1,6 @@
 <?php
 /* @var \common\models\Post $model */
-$filePath = Yii::$app->params['staticDomain'] . '/posts/';
+$filePath = Yii::$app->params['staticDomain'] . 'posts/';
 ?>
 <a class="expert-opinion__link" href="<?= \yii\helpers\Url::to(['science-and-practice/expert-opinion', 'id' => $model->id])?>">
     <div class="expert-opinion__box">

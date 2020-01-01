@@ -1,6 +1,6 @@
 <?php
 /* @var \common\models\Tutorial $model */
-$filePath = Yii::$app->params['staticDomain'] . '/web/tutorials/';
+$filePath = Yii::$app->params['staticDomain'] . 'tutorials/';
 ?>
 <a class="tutorial__link" href="<?= $filePath . $model->file ?>" download>
     <div class="tutorial__box">
