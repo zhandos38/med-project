@@ -1188,6 +1188,7 @@
 
 .comments__wrapper {
   margin-top: 40px;
+  word-wrap: break-word;
 }
 
 .search-btn {
@@ -1201,6 +1202,16 @@
 
 .comment-author-avatar img {
   width: 80px;
+}
+
+.navbar-search__input {
+  width: 260px;
+}
+
+.comment-submit {
+  padding: 20px !important;
+  line-height: 0 !important;
+  font-size: 14px !important;
 }
 
 @media only screen and (max-width: 992px) {
