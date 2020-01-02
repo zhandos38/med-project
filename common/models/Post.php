@@ -73,7 +73,7 @@ class Post extends \yii\db\ActiveRecord
             [['title'], 'required'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['createTimeRange'], 'match', 'pattern' => '/^.+\s\-\s.+$/'],
-            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jfif']
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg']
         ];
     }
 
