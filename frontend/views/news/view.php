@@ -1,6 +1,6 @@
 <?php
 use common\models\Post;
-use rmrevin\yii\module\Comments;
+use yii\helpers\Url;
 
 /* @var Post $model */
 
@@ -20,7 +20,7 @@ $imgPath = Yii::$app->params['staticDomain'] . 'posts/';
     <?= $model->content ?>
 </div>
 <div class="comments__wrapper">
-    <p><em>*Оставлять комментарии могут только зарегистрированные пользователи.&nbsp;</em><a href="https://rnoik.ru/personal/?register=yes"><em>Зарегистрируйтесь</em></a><em>&nbsp;или&nbsp;</em><a href="https://rnoik.ru/personal/"><em>авторизируйтесь</em></a><br></p>
+    <p><em>*Оставлять комментарии могут только зарегистрированные пользователи.&nbsp;</em><a href="<?= Url::to(['site/signup']) ?>"><em>Зарегистрируйтесь</em></a><em>&nbsp;или&nbsp;</em><a href="<?= Url::to(['site/login']) ?>"><em>авторизируйтесь</em></a><br></p>
 </div>
 <?= \yii2mod\comments\widgets\Comment::widget([
     'model' => $model,
