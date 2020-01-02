@@ -22,7 +22,6 @@ $imgPath = Yii::$app->params['staticDomain'] . 'posts/';
 <div class="comments__wrapper">
     <p><em>*Оставлять комментарии могут только зарегистрированные пользователи.&nbsp;</em><a href="https://rnoik.ru/personal/?register=yes"><em>Зарегистрируйтесь</em></a><em>&nbsp;или&nbsp;</em><a href="https://rnoik.ru/personal/"><em>авторизируйтесь</em></a><br></p>
 </div>
-<?=  Comments\widgets\CommentListWidget::widget([
-    'entity' => (string) 'post-' . $model->id, // type and id
-]);
-?>
+<?= \yii2mod\comments\widgets\Comment::widget([
+    'model' => $model,
+]); ?>

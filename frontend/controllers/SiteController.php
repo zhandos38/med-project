@@ -319,13 +319,22 @@ class SiteController extends Controller
         return $this->render('for-patients', ['dataProvider' => $dataProvider]);
     }
 
-    public function actionSearch()
+    public function actionSearch($query)
     {
-        $searchModel = new PostSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $query = Post::find()->where(['like', 'title', $query]);
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ]
+        ]);
 
         return $this->render('search', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider
         ]);
     }

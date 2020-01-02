@@ -1,12 +1,23 @@
 <?php
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
+
 ?>
 <div>
     <header class="header">
         <div class="row">
             <div class="col header-column">
                 <div class="container header-container">
-                    <div class="header-search"><input class="d-xl-flex navbar-search__input form-control" type="search" placeholder="Пойск по сайту"><i class="fa fa-search header__search-icon"></i></div>
+                    <div class="header-search">
+                        <form action="<?= Url::to(['site/search']) ?>" method="get">
+                            <div style="display: flex">
+                                <input class="d-xl-flex navbar-search__input form-control" type="search" name="query" placeholder="Пойск по сайту">
+                                <button type="submit" class="search-btn">
+                                    <i class="fa fa-search header__search-icon"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="header-buttons">
                         <?php if (Yii::$app->user->isGuest): ?>
                             <a class="header-enter-btn" href="<?= Url::to(['site/signup']) ?>">

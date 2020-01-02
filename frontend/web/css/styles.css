@@ -1190,6 +1190,19 @@
   margin-top: 40px;
 }
 
+.search-btn {
+  background: none;
+  border: none;
+}
+.search-btn:hover {
+  border: none;
+  background: none;
+}
+
+.comment-author-avatar img {
+  width: 80px;
+}
+
 @media only screen and (max-width: 992px) {
   .grid-item {
     width: 50%;

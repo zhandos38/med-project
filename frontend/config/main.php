@@ -50,11 +50,9 @@ return [
         ],
     ],
     'modules' => [
-        'comments' => [
-            'class' => 'rmrevin\yii\module\Comments\Module',
-            'userIdentityClass' => 'common\models\User',
-            'useRbac' => true,
-        ]
+        'comment' => [
+            'class' => 'yii2mod\comments\Module',
+        ],
     ],
     'container' => [
         'definitions' => [

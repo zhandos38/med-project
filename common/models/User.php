@@ -37,7 +37,7 @@ use yii\web\IdentityInterface;
  * @property string $position [varchar(255)]
  * @property string $avatar_url [varchar(255)]
  */
-class User extends ActiveRecord implements IdentityInterface, CommentatorInterface
+class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_INACTIVE = 9;
@@ -308,18 +308,13 @@ class User extends ActiveRecord implements IdentityInterface, CommentatorInterfa
         ];
     }
 
-    public function getCommentatorAvatar()
+    public function getAvatar()
     {
-        return $this->avatar_url ? $this->avatar_url : 'default-user.png';
+        return '/img/no-avatar.png';
     }
 
-    public function getCommentatorName()
+    public function getUsername()
     {
-        return $this->full_name;
-    }
-
-    public function getCommentatorUrl()
-    {
-        return ['/profile', 'id' => $this->id]; // or false, if user does not have a public page
+        // your custom code
     }
 }
