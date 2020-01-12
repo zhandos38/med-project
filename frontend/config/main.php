@@ -9,7 +9,10 @@ return [
     'id' => 'app-frontend',
     'language' => 'ru',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'under-construction',
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -54,7 +57,23 @@ return [
             'class' => 'rmrevin\yii\module\Comments\Module',
             'userIdentityClass' => 'common\models\User',
             'useRbac' => true,
-        ]
+        ],
+        'under-construction' => [
+            'class' => '\mervick\underconstruction\Module',
+            // this is the on off switch
+            'locked' => true,
+            // the list of IPs that are allowed to access site.
+            // The default value is `['127.0.0.1', '::1']`, which means the site can only be accessed by localhost.
+            'allowedIPs' => ['127.0.0.1', '::1'],
+            // change this to your namespace, if you want use your own controller
+            'controllerNamespace' => 'mervick\underconstruction\controllers',
+            // if you want use your views
+            'viewPath' => '',
+            // default layout
+            'layout' => 'main',
+            // if you want redirect to external website, default is null
+            'redirectURL' => 'http://stop.ksior.kz',
+        ],
     ],
     'container' => [
         'definitions' => [
