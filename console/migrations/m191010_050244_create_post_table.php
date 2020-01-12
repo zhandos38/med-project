@@ -20,7 +20,6 @@ class m191010_050244_create_post_table extends Migration
             'views' => $this->integer(),
             'user_id' => $this->integer(),
             'type_id' => $this->integer(2),
-            'image' => $this->string(),
             'created_at' => $this->integer(),
             'updated_at' => $this->integer()
         ]);

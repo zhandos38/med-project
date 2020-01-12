@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use common\models\Post;
 use common\models\Tutorial;
 use common\models\Vacation;
+use frontend\models\PostSearch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -316,5 +317,25 @@ class SiteController extends Controller
             ]
         ]);
         return $this->render('for-patients', ['dataProvider' => $dataProvider]);
+    }
+
+    public function actionSearch($query)
+    {
+        $query = Post::find()->where(['like', 'title', $query]);
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC
+                ]
+            ]
+        ]);
+
+        return $this->render('search', [
+            'dataProvider' => $dataProvider
+        ]);
     }
 }

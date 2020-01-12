@@ -49,7 +49,7 @@ return [
         'mailer' => [
             'class' => \YarCode\Yii2\Mailgun\Mailer::class,
             'domain' => 'mg.ksior.kz',
-            'apiKey' => '636ba835c63f4b0f692ceee5f5cf38b5-059e099e-a68e8266',
+            'apiKey' => Yii::$app->request->params['mailApiKey'],
         ],
     ],
     'modules' => [
@@ -73,6 +73,9 @@ return [
             'layout' => 'main',
             // if you want redirect to external website, default is null
             'redirectURL' => 'http://stop.ksior.kz',
+        ],
+        'comment' => [
+            'class' => 'yii2mod\comments\Module',
         ],
     ],
     'container' => [
