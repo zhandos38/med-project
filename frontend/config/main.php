@@ -64,7 +64,7 @@ return [
             'locked' => true,
             // the list of IPs that are allowed to access site.
             // The default value is `['127.0.0.1', '::1']`, which means the site can only be accessed by localhost.
-            'allowedIPs' => ['2.132.213.112', '5.34.31.112', '127.0.0.1', '::1'],
+            'allowedIPs' => ['2.132.213.112', '5.34.31.112'],
             // change this to your namespace, if you want use your own controller
             'controllerNamespace' => 'mervick\underconstruction\controllers',
             // if you want use your views
