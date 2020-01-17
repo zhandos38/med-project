@@ -105,7 +105,12 @@ class SignupForm extends Model
         $user->city = $this->city;
         $user->birthday = $this->birthday;
         $user->position = $this->position;
-        return $user->save();
+        $user->role = 'user';
+        if ($user->save()) {
+            $this->sendEmail($user);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -132,8 +137,8 @@ class SignupForm extends Model
 
         $mg->messages()->send('mg.ksior.kz', [
             'from'    => 'info@ksior.kz',
-            'to'      => 'zhandos_38@mail.ru',
-            'subject' => 'The PHP SDK is awesome!',
+            'to'      => $this->email,
+            'subject' => 'Подтверждение аккаунта',
             'html' => $template
         ]);
 

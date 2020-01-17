@@ -9,6 +9,7 @@
 namespace console\controllers;
 
 
+use Mailgun\Mailgun;
 use Yii;
 use yii\console\Controller;
 
@@ -23,5 +24,18 @@ class SiteController extends Controller
             ->setTextBody("Hello you are the best dude") // текст письма без HTML
             ->setHtmlBody("<h1>You are very cool man what i have ever meet</h1>")
             ->send();
+    }
+
+    public function actionSendMail()
+    {
+        // First, instantiate the SDK with your API credentials
+        $mg = Mailgun::create(Yii::$app->params['mailApiKey']); // For US servers
+
+        $mg->messages()->send('mg.ksior.kz', [
+            'from'    => 'info@ksior.kz',
+            'to'      => 'zhandos38@gmail.com',
+            'subject' => 'The PHP SDK is awesome!',
+            'html' => '<h1>Hello World!</h1>'
+        ]);
     }
 }
