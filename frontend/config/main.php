@@ -61,7 +61,7 @@ return [
         'under-construction' => [
             'class' => '\mervick\underconstruction\Module',
             // this is the on off switch
-            'locked' => false,
+            'locked' => true,
             // the list of IPs that are allowed to access site.
             // The default value is `['127.0.0.1', '::1']`, which means the site can only be accessed by localhost.
 //            'allowedIPs' => ['2.132.213.112', '5.34.31.112'],
