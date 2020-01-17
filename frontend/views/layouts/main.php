@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\components\AsideWidget;
 
 AppAsset::register($this);
 ?>
@@ -48,38 +49,7 @@ AppAsset::register($this);
         </div>
 
         <div class="col col-lg-4">
-            <div class="aside-event">
-                <h2 class="aside-event__header">Мероприятия<br></h2>
-                <div class="aside-event__item-wrapper">
-                    <a class="aside-event__item" href="#">
-                        <div class="aside-event__item-box">
-                            <div class="aside-event__date"><span>03 — 04 Октября 2019<br></span></div>
-                            <p class="aside-event__text">Вебинар "Эндоваскулярное лечение сложных хронических окклюзий коронарных артерий. Мастер-класс с прямой трансляцией из операционной"<br></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="aside-event__item-wrapper">
-                    <a class="aside-event__item" href="#">
-                        <div class="aside-event__item-box">
-                            <div class="aside-event__date"><span>03 — 04 Октября 2019<br></span></div>
-                            <p class="aside-event__text">Вебинар "Эндоваскулярное лечение сложных хронических окклюзий коронарных артерий. Мастер-класс с прямой трансляцией из операционной"<br></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="aside-event"></div>
-            </div>
-            <div class="aside-expert-opinion">
-                <h2 class="aside-expert-opinion__header"><strong>Экспертные мнения</strong><br></h2>
-                <div class="aside-expert-opinion__item"><a class="aside-expert-opinion__link-wrapper" href="#"></a>
-                    <div class="aside-expert-opinion__box">
-                        <div><span>Лечение артериовенозной мальформации<br></span></div>
-                        <div class="aside-expert-opinion__title">
-                            <p>Современный вектор эндоваскулярного лечения острого периода разрыва артериовенозной мальформации.<br></p>
-                        </div>
-                        <div><span>Гегенава Б. Б.<br></span></div>
-                    </div>
-                </div>
-            </div>
+            <?= AsideWidget::widget() ?>
         </div>
     </div>
 </div>

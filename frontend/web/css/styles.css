@@ -1214,6 +1214,10 @@
   font-size: 14px !important;
 }
 
+.event__content-view {
+  font-weight: unset !important;
+}
+
 @media only screen and (max-width: 992px) {
   .grid-item {
     width: 50%;
