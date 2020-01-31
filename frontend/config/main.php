@@ -46,11 +46,6 @@ return [
                 'to_specialist/vacations' => 'site/vacations',
             ],
         ],
-        'mailer' => [
-            'class' => \YarCode\Yii2\Mailgun\Mailer::class,
-            'domain' => 'mg.ksior.kz',
-            'apiKey' => Yii::$app->request->params['mailApiKey'],
-        ],
     ],
     'modules' => [
         'comments' => [

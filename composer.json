@@ -30,7 +30,8 @@
         "mailgun/mailgun-php": "^3.0",
         "kriswallsmith/buzz": "^1.0",
         "nyholm/psr7": "^1.2",
-        "mervick/yii2-under-construction": "~1.0"
+        "mervick/yii2-under-construction": "~1.0",
+        "boundstate/yii2-mailgun": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

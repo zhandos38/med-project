@@ -120,28 +120,10 @@ class SignupForm extends Model
      */
     protected function sendEmail($user)
     {
-        $verifyLink = Yii::$app->urlManager->createAbsoluteUrl(['site/verify-email', 'token' => $user->verification_token]);
-        $link = Html::a(Html::encode($verifyLink), $verifyLink);
-        $userName = $user->full_name;
-
-        $template = "<div class=\"verify-email\">
-                        <p>Здравствуйте $userName,</p>
-                    
-                        <p>Перейдите по ссылке чтобы подтвердить данную электронную почту</p>
-                    
-                        <p>$link</p>
-                    </div>";
-
-        // First, instantiate the SDK with your API credentials
-        $mg = Mailgun::create(Yii::$app->params['mailApiKey']); // For US servers
-
-        $mg->messages()->send('mg.ksior.kz', [
-            'from'    => 'info@ksior.kz',
-            'to'      => $this->email,
-            'subject' => 'Подтверждение аккаунта',
-            'html' => $template
-        ]);
-
-        return true;
+        return Yii::$app->mailer->compose(['html' => 'Signup-html'], ['user' => $user])
+            ->setFrom([Yii::$app->params['supportEmail'] => 'Ksior.kz'])
+            ->setTo($user->email)
+            ->setSubject(Yii::t('app', 'Активация аккаунта'))
+            ->send();
     }
 }
