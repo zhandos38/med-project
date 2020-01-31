@@ -120,7 +120,7 @@ class SignupForm extends Model
      */
     protected function sendEmail($user)
     {
-        return Yii::$app->mailer->compose(['html' => 'Signup-html'], ['user' => $user])
+        return Yii::$app->mailer->compose(['html' => 'emailVerify-html', 'text' => 'emailVerify-text'], ['user' => $user])
             ->setFrom([Yii::$app->params['supportEmail'] => 'Ksior.kz'])
             ->setTo($user->email)
             ->setSubject(Yii::t('app', 'Активация аккаунта'))
