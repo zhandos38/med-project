@@ -2,6 +2,7 @@
   width: 120px;
   position: absolute;
   top: -56px;
+  z-index: 9;
 }
 
 .header-search {
@@ -29,6 +30,7 @@
 .header-enter-btn:hover {
   text-decoration: none;
   opacity: 0.6;
+  color: #212529;
 }
 
 .header-user-icon {
@@ -53,6 +55,7 @@
 .header-login-btn:hover {
   text-decoration: none;
   opacity: 0.8;
+  color: #212529;
 }
 
 .header-logout-btn {
