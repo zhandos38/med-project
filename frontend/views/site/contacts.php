@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="form-group"><input class="form-control" type="text" placeholder="Ваше имя"></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="Ваш город"></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="E-mail"></div>
-                <div class="form-group"><textarea class="form-control" placeholder="Ваше пожелания"></textarea></div><button class="btn btn-info" type="button">Отправить</button></form>
+                <div class="form-group"><textarea class="form-control" placeholder="Ваше пожелания"></textarea></div><button class="btn btn-success" type="button" style="background-color: #009e8a">Отправить</button></form>
         </div>
     </div>
 </div>
