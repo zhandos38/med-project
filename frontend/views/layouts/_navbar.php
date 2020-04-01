@@ -55,7 +55,6 @@ use yii\widgets\ActiveForm;
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['community/geography']) ?>">География общество</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['news/']) ?>">Новости</a>
                             <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/under-construction']) ?>">Медицинские партнеры</a>
-                            <a class="dropdown-item" role="presentation" href="<?= Url::to(['site/under-construction']) ?>">Ветеранский совет</a>
                         </div>
                     </li>
                     <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Мероприятия</a>

@@ -1,5 +1,5 @@
 .photo-card {
-  background-color: #009cbf;
+  background-color: #009e8a;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   display: flex;
@@ -71,7 +71,7 @@
 }
 
 .photo-tags a {
-  background-color: #191e20;
+  background-color: #015a4f;
   border-radius: 50px;
   color: #fff;
   display: block;
@@ -81,7 +81,7 @@
 }
 
 .photo-tags a:hover, .photo-tags a:focus {
-  color: #e37544;
+  color: #c3c3c3;
 }
 
 .photo-details p {

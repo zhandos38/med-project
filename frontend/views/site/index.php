@@ -92,15 +92,15 @@ setlocale(LC_ALL,'ru_RU.utf8');
                 <div class="row">
                     <div class="col">
                         <section>
-                            <div class="photo-card" style="background-color: rgb(0,35,42);">
+                            <div class="photo-card">
                                 <div class="photo-background" style="background-image:url(<?= $imgPath . 'posts/' . $latestClinicCase->image ?>);"></div>
                                 <div class="photo-details">
                                     <div class="photo-heading"><span class="photo-author"><i class="fa fa-bullhorn"></i>&nbsp;<?= $latestClinicCase->author ?><br></span></div>
                                     <p style="padding-top: 5px;"><?= $latestClinicCase->title ?><br></p>
                                     <div class="photo-tags">
                                         <ul>
-                                            <li><a href="<?= Url::to(['science-and-practice/clinic-case', 'id' => $latestClinicCase->id]) ?>" style="background-color: #009cbf;">Читать</a></li>
-                                            <li><a href="<?= Url::to(['science-and-practice/clinic-cases']) ?>" style="background-color: #009cbf;">Другие случаи</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/clinic-case', 'id' => $latestClinicCase->id]) ?>">Читать</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/clinic-cases']) ?>">Другие случаи</a></li>
                                         </ul>
                                     </div>
                                     <div class="photo-heading"></div>
@@ -115,16 +115,16 @@ setlocale(LC_ALL,'ru_RU.utf8');
                 <div class="row">
                     <div class="col">
                         <section>
-                            <div class="photo-card" style="background-color: #fff;">
+                            <div class="photo-card">
                                 <div class="photo-background" style="background-image:url(<?= $imgPath . 'posts/' . $latestExpertOpinion->image ?>);"></div>
                                 <div class="photo-details">
-                                    <h1 style="color: rgb(0,0,0);"><strong><?= $latestExpertOpinion->topic ?></strong><br></h1>
-                                    <p style="color: rgb(0,0,0);"><?= $latestExpertOpinion->title ?><br></p>
+                                    <h1><strong><?= $latestExpertOpinion->topic ?></strong><br></h1>
+                                    <p><?= $latestExpertOpinion->title ?><br></p>
                                     <div><span class="photo-author"><i class="fa fa-bullhorn"></i>&nbsp;<?= $latestClinicCase->author ?><br><br></span></div>
                                     <div class="photo-tags">
                                         <ul>
-                                            <li><a href="<?= Url::to(['science-and-practice/expert-opinion', 'id' => $latestExpertOpinion->id]) ?>" style="background-color: #009cbf;">Читать</a></li>
-                                            <li><a href="<?= Url::to(['science-and-practice/expert-opinions']) ?>" style="background-color: #009cbf;">Другие мнения</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/expert-opinion', 'id' => $latestExpertOpinion->id]) ?>">Читать</a></li>
+                                            <li><a href="<?= Url::to(['science-and-practice/expert-opinions']) ?>">Другие мнения</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                 </div>
             </div>
             <div class="col-sm-3 item">
-                <div class="posts__item-title"><span>Журнал</span></div>
+                <div class="posts__item-title"><span>Литература и Журналы</span></div>
                 <div class="row">
                     <div class="col">
                         <section>
@@ -143,7 +143,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                     <div class="magazine-download__link-wrapper">
                                         <div class="photo-tags">
                                             <ul>
-                                                <li><a href="#" style="background-color: #009cbf;">Скачать журнал</a></li>
+                                                <li><a href="#">Скачать журнал</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                 </div>
             </div>
             <div class="col-sm-3 item">
-                <div class="posts__item-title"><span>Мед калькулятор</span></div>
+                <div class="posts__item-title"><span>Полезные ссылки</span></div>
                 <div class="row">
                     <div class="col">
                         <section>
@@ -207,95 +207,6 @@ setlocale(LC_ALL,'ru_RU.utf8');
         </div>
     </div>
 </div>
-<section>
-    <div class="row">
-        <div class="col">
-            <section>
-                <div class="container">
-                    <h1 class="text-center blog__title">Самое обсуждаемое</h1>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
-                                <div class="card-body">
-                                    <div class="card-info">
-                                        <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
-                                        <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
-                                    </div>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur explicabo odio! Adipisci aut dolores expedita maxime natus neque sed veritatis? Ea laborum neque nihil nobis omnis reiciendis ut voluptates.
-                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
-                                <div class="card-body">
-                                    <div class="card-info">
-                                        <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
-                                        <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
-                                    </div>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad atque aut cupiditate deleniti earum, ex, exercitationem facilis inventore iusto magnam minus nobis odio officia optio quis sequi vel veniam!
-                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
-                                <div class="card-body">
-                                    <div class="card-info">
-                                        <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
-                                        <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
-                                    </div>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi delectus eius eligendi eos eveniet fugit, illo iusto molestiae mollitia nemo odio odit qui quia quis, totam vel? Consequuntur, harum.
-                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
-                                <div class="card-body">
-                                    <div class="card-info">
-                                        <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
-                                        <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
-                                    </div>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nostrum, temporibus! A ad cupiditate explicabo, impedit minima molestiae, molestias nam necessitatibus qui quo sed tempore totam unde ut velit veniam!
-                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
-                                <div class="card-body">
-                                    <div class="card-info">
-                                        <div><i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span></div>
-                                        <div><i class="fa fa-commenting"></i><span class="card-comments-count">366</span></div>
-                                    </div>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias consequatur debitis dicta eligendi facilis harum in iure possimus, tempore. Incidunt laudantium molestias natus nihil nobis quisquam tempore tenetur ut.
-                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-4 box-shadow"><img class="card-img-top w-100 d-block" src="img/minibus.jpeg">
-                                <div class="card-body">
-                                    <div class="card-info">
-                                        <div>
-                                            <i class="fa fa-calendar"></i><span class="card-comments-count">13.07.2017</span>
-                                        </div>
-                                        <div>
-                                            <i class="fa fa-commenting"></i><span class="card-comments-count">366</span>
-                                        </div>
-                                    </div>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis consequuntur iusto natus numquam rem sint, tenetur unde! At beatae consequatur eligendi laboriosam magni mollitia optio ut. Id, neque suscipit.
-                                    </p><a class="card-link" href="#"><button class="btn btn-info" type="button">Читать</button></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</section>
 <div class="partners">
     <div class="partners__list-wrapper">
         <h2 style="text-align: center; margin-bottom: 40px">
