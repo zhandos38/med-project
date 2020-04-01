@@ -22,6 +22,3 @@ $imgPath = Yii::$app->params['staticDomain'] . 'posts/';
 <div class="comments__wrapper">
     <p><em>*Оставлять комментарии могут только зарегистрированные пользователи.&nbsp;</em><a href="<?= Url::to(['site/signup']) ?>"><em>Зарегистрируйтесь</em></a><em>&nbsp;или&nbsp;</em><a href="<?= Url::to(['site/login']) ?>"><em>авторизируйтесь</em></a><br></p>
 </div>
-<?= \yii2mod\comments\widgets\Comment::widget([
-    'model' => $model,
-]); ?>
