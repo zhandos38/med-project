@@ -16,22 +16,28 @@ setlocale(LC_ALL,'ru_RU.utf8');
                         <div class="carousel-item">
                             <div class="jumbotron pulse animated hero-nature carousel-hero">
                                 <h1 class="hero-title">Добро пожаловать!</h1>
-                                <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Мне интересно</a></p>
+                                <p class="hero-subtitle">
+                                    В научно-практическая и академическая жизнь «Казахстанского общества интервенционных онкорадиологов»
+                                </p>
+                                <p><a class="btn btn-primary hero-button plat" role="button" href="<?= Url::to(['community/about']) ?>">Мне интересно</a></p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="jumbotron pulse animated hero-photography carousel-hero">
                                 <h1 class="hero-title">Добро пожаловать!</h1>
-                                <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Подробнее</a></p>
+                                <p class="hero-subtitle">
+                                    В научно-практическая и академическая жизнь «Казахстанского общества интервенционных онкорадиологов»
+                                </p>
+                                <p><a class="btn btn-primary hero-button plat" role="button" href="<?= Url::to(['community/about']) ?>">Подробнее</a></p>
                             </div>
                         </div>
                         <div class="carousel-item active">
                             <div class="jumbotron pulse animated hero-technology carousel-hero">
                                 <h1 class="hero-title">Добро пожаловать!</h1>
-                                <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <p><a class="btn btn-primary hero-button plat" role="button" href="#">Подробнее</a></p>
+                                <p class="hero-subtitle">
+                                    В научно-практическая и академическая жизнь «Казахстанского общества интервенционных онкорадиологов»
+                                </p>
+                                <p><a class="btn btn-primary hero-button plat" role="button" href="<?= Url::to(['community/about']) ?>">Подробнее</a></p>
                             </div>
                         </div>
                     </div>
@@ -47,9 +53,13 @@ setlocale(LC_ALL,'ru_RU.utf8');
         </div>
         <div class="col col-md-5 slider__description-wrapper">
             <div class="slider__description">
-                <h2 class="slider__header">Будьте с нами!</h2>
-                <p class="slider__text">Дорогие коллеги, приглашаем к активному сотрудничеству в рамках научно-практической жизни российского общества интервенционных кардиоангиологов. Нашей динамично развивающейся специальности нужны молодые амбициозные профессионалы! Будьте
-                    с нами! Вступайте в общество КСИОР!<br></p>
+                <h2 class="slider__header">
+                    Будьте с нами!
+                </h2>
+                <p class="slider__text">
+                    Дорогие коллеги, а также все, кому не безразлична научно-практическая и академическая жизнь «Казахстанского общества интервенционных онкорадиологов» приглашаем вас к активному сотрудничеству. Вступайте в общество!
+                    <br>
+                </p>
                 <div class="slider__button-wrapper"><a class="slider__button" href="#">Вы в обществе</a></div>
             </div>
         </div>
@@ -182,14 +192,14 @@ setlocale(LC_ALL,'ru_RU.utf8');
             <div class="col-md-6">
                 <h2>Члены общество</h2>
                 <div class="team__item-wrapper">
-                    <div class="team__item"><img class="rounded-circle team__item-img" src="img/1.jpg">
-                        <div class="team__item-title"><span><br>Бабунашвили Автандил Михайлович<br><br></span></div>
+                    <div class="team__item"><img class="rounded-circle team__item-img" src="img/pp.jfif">
+                        <div class="team__item-title"><span><br>Малаева Нияз Бейсенович<br><br></span></div>
                     </div>
-                    <div class="team__item"><img class="rounded-circle team__item-img" src="img/1.jpg">
-                        <div class="team__item-title"><span><br>Бабунашвили Автандил Михайлович<br><br></span></div>
+                    <div class="team__item"><img class="rounded-circle team__item-img" src="img/pp.jfif">
+                        <div class="team__item-title"><span><br>Малаева Нияз Бейсенович<br><br></span></div>
                     </div>
-                    <div class="team__item"><img class="rounded-circle team__item-img" src="img/1.jpg">
-                        <div class="team__item-title"><span><br>Бабунашвили Автандил Михайлович<br><br></span></div>
+                    <div class="team__item"><img class="rounded-circle team__item-img" src="img/pp.jfif">
+                        <div class="team__item-title"><span><br>Малаева Нияз Бейсенович<br><br></span></div>
                     </div>
                 </div>
                 <div><a class="about__button" href="<?= Url::to(['community/direction']) ?>">Другие участники</a></div>
@@ -198,8 +208,8 @@ setlocale(LC_ALL,'ru_RU.utf8');
                 <h2>Об обществе</h2>
                 <div>
                     <p class="about__description">
-                        «Российское научное общество интервенционных кардиоангиологов» (РНОИК) — это общероссийская общественная организация, объединяющая с 2000 года врачей кардиологов, рентгенологов, сердечно-сосудистых хирургов и специалистов по рентгенэндоваскулярной
-                        диагностике и лечению с самой широкой географией от Калининграда до Камчатки.<br><br>
+                        Дорогие коллеги, а также все, кому не безразлична научно-практическая и академическая жизнь «Казахстанского общества интервенционных онкорадиологов» приглашаем вас к активному сотрудничеству. Вступайте в общество!
+                        <br><br>
                     </p>
                 </div>
                 <div><a class="about__button" href="<?= Url::to(['site/about']) ?>">Узнать больше</a></div>
