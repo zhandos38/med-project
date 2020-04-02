@@ -190,7 +190,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
     <div class="container">
         <div class="row team-about__row">
             <div class="col-md-6">
-                <h2>Члены общество</h2>
+                <h2>Члены общества</h2>
                 <div class="team__item-wrapper">
                     <div class="team__item"><img class="rounded-circle team__item-img" src="img/pp.jfif">
                         <div class="team__item-title"><span><br>Малаева Нияз Бейсенович<br><br></span></div>

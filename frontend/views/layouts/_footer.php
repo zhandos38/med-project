@@ -1,9 +1,16 @@
 <div class="icon-bar">
-    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-    <a href="#" class="google"><i class="fa fa-google"></i></a>
-    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+    <a href="https://www.facebook.com/KSIOR-%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD%D1%81%D0%BA%D0%BE%D0%B5-%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D0%B5%D0%BD%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85-%D0%BE%D0%BD%D0%BA%D0%BE%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%BE%D0%B2-109885353858152" class="facebook" target="_blank">
+        <i class="fa fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/ksior_kz/" class="instagram" target="_blank">
+        <i class="fa fa-instagram"></i>
+    </a>
+    <a href="#" class="telegram">
+        <i class="fa fa-telegram"></i>
+    </a>
+    <a href="#" class="email">
+        <i class="fa fa-envelope"></i>
+    </a>
 </div>
 <div class="footer-clean">
     <footer>

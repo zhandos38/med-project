@@ -1269,23 +1269,18 @@
   color: white;
 }
 
-.twitter {
+.telegram {
   background: #55ACEE;
   color: white;
 }
 
-.google {
-  background: #dd4b39;
+.instagram {
+  background: #C13584;
   color: white;
 }
 
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.youtube {
-  background: #bb0000;
+.email {
+  background: #3a3a3a;
   color: white;
 }
 
