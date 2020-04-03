@@ -285,7 +285,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                 Оставайтесь на связи с нами и будьте в курсе всех последних событий Общества. Мы будем рады рассказать Вам обо всех интересных новостях!
                             </div>
                             <br>
-                            <input class="form-control" type="email" maxlength="255" placeholder="Email">
+                            <input class="form-control" type="email" maxlength="255" placeholder="Email" required>
                         </div>
                         <button type="submit" class="app-button">Подписаться</button>
                     </form>
@@ -317,9 +317,13 @@ $(document).ready(function(){
     });
 });
 
-$('form#location-subscribe-form').on('beforeSubmit', function(e) {
+$('#location-subscribe-form').on('submit', function(e) {
     e.preventDefault();
-    console.log('clicked');
+    Swal.fire(
+      'Успех',
+      'Вы успешно подписаны!',
+      'success'
+    );
     return false;
 });
 JS;
