@@ -265,7 +265,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
         <div class="row">
             <div class="col-md-6">
                 <h2>
-                    Гоеграфия общество
+                    Гоеграфия общества
                 </h2>
                 <ul>
                     <li>Астана</li>
