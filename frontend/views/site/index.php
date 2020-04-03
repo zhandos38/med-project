@@ -271,6 +271,12 @@ setlocale(LC_ALL,'ru_RU.utf8');
                     <li>Астана</li>
                     <li>Алматы</li>
                     <li>Шымкент</li>
+                    <li>Усть-Каменогорск</li>
+                    <li>Караганда</li>
+                    <li>Уральск</li>
+                    <li>Актобе</li>
+                    <li>Актау</li>
+                    <li>Тараз</li>
                 </ul>
             </div>
             <div class="col-md-6">
