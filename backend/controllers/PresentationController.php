@@ -114,9 +114,14 @@ class PresentationController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->presentationFile = UploadedFile::getInstance($model, 'presentationFile');
+            $model->presentationFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->presentationFile) {
+                $model->file = $model->presentationFile->baseName . '.' . $model->presentationFile->extension;
+            }
+
             if ($model->save() && $model->upload()) {
-                return $this->redirect(['index']);
+                return $this->goBack();
             }
             return false;
         }
@@ -132,6 +137,8 @@ class PresentationController extends Controller
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
