@@ -2,9 +2,12 @@
 
 namespace backend\controllers;
 
+use Exception;
 use Yii;
 use common\models\Presentation;
 use backend\models\PresentationSearch as PresentationSearch;
+use yii\helpers\Json;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -36,6 +39,8 @@ class PresentationController extends Controller
      */
     public function actionIndex()
     {
+        Url::remember();
+
         $searchModel = new PresentationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -69,10 +74,16 @@ class PresentationController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->presentationFile = UploadedFile::getInstance($model, 'presentationFile');
-            if ($model->save() && $model->upload()) {
-                return $this->redirect(['index']);
+
+            if ($model->presentationFile) {
+                $model->file = $model->presentationFile->baseName . '.' . $model->presentationFile->extension;
             }
-            return false;
+
+            if ($model->save() && $model->upload()) {
+                return $this->goBack();
+            }
+
+            throw new Exception(Json::encode($model->errors));
         }
 
         return $this->render('create', [

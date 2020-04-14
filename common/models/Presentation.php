@@ -69,20 +69,18 @@ class Presentation extends \yii\db\ActiveRecord
     }
 
     public function upload()
-    {   $imgPath = \Yii::getAlias('@static');
+    {
+        if ($this->presentationFile === null) {
+            return true;
+        }
+
+        $filePath = \Yii::getAlias('@static') . '/web/presentations/' . $this->presentationFile->baseName . '.' . $this->presentationFile->extension;
+
         if ($this->validate()) {
-            $this->presentationFile->saveAs($imgPath . '/web/presentations/' . $this->presentationFile->baseName . '.' . $this->presentationFile->extension);
+            $this->presentationFile->saveAs($filePath);
             return true;
         } else {
             return false;
         }
-    }
-
-    public function beforeSave($insert)
-    {
-        if (!$this->file || $insert['file'])
-            $this->file = $this->presentationFile->baseName . '.' . $this->presentationFile->extension;
-
-        return true;
     }
 }
