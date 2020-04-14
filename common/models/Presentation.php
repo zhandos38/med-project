@@ -46,7 +46,7 @@ class Presentation extends \yii\db\ActiveRecord
             [['name'], 'string'],
             [['views', 'year', 'created_at', 'updated_at'], 'integer'],
             [['file', 'author'], 'string', 'max' => 255],
-            [['presentationFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx, djvu'],
+            [['presentationFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, doc, docx, djvu, pptx'],
         ];
     }
 
