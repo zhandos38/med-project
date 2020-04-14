@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <h2 class="statute__title"><strong>Устав</strong></h2>
 <div class="row">
     <div class="col-md-5">
-        <img class="statute__img" src="/img/ustav_rnoik.jpg">
+        <img class="statute__img" src="/img/ustav.jpg">
     </div>
     <div class="col-md-7">
         <div class="statute__content">
