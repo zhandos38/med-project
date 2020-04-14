@@ -1,7 +1,7 @@
 <?php
 
 /* @var \common\models\Presentation $model */
-$imgPath = Yii::$app->params['staticDomain'] . 'presentations/';
+$imgPath = Yii::$app->params['staticDomain'] . '/presentations/';
 ?>
 <a href="<?= $imgPath . $model->file ?>" class="publication__link" download>
     <div class="presentation__box">

@@ -709,8 +709,8 @@
 
 .presentation-sizer,
 .presentation-item {
-  width: 50%;
-  padding: 10px;
+  width: 47%;
+  margin: 10px;
 }
 
 /* Tutorials */
@@ -1069,13 +1069,17 @@
   color: #0a0a0a;
   transition: all .5s ease;
   background: #f3f3f378;
+  opacity: 0.8;
+}
+.presentation__box:hover {
+  color: #757575;
+  background-color: #e2e2e278;
 }
 .presentation__box::after {
   content: "";
   z-index: -1;
   position: absolute;
-  top: 36px;
-  left: 160px;
+  top: 28px;
   right: 0;
   bottom: 0;
   height: inherit;
@@ -1227,12 +1231,6 @@
   }
   .presentation-item {
     width: 100%;
-  }
-  .presentation__box::after {
-    top: 33px;
-    left: 140px;
-    height: 200px;
-    width: 195px;
   }
 }
 
