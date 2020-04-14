@@ -19,10 +19,12 @@ class IndexAsset extends AssetBundle
         'css/dh-card-image-left-dark.css',
         'css/footer-clean.css',
         'css/navigation.css',
-        'css/styles.css'
+        'css/styles.css',
+        'css/sweetalert2.css'
     ];
     public $js = [
-        'js/owl.carousel.min.js'
+        'js/owl.carousel.min.js',
+        'js/sweetalert2.js'
     ];
     public $depends = [
 //        'yii\web\YiiAsset',

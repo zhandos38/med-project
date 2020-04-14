@@ -153,7 +153,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                                     <div class="magazine-download__link-wrapper">
                                         <div class="photo-tags">
                                             <ul>
-                                                <li><a href="#">Скачать журнал</a></li>
+                                                <li>
+                                                    <a href="#">Скачать журнал</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -190,7 +192,7 @@ setlocale(LC_ALL,'ru_RU.utf8');
     <div class="container">
         <div class="row team-about__row">
             <div class="col-md-6">
-                <h2>Члены общество</h2>
+                <h2>Члены общества</h2>
                 <div class="team__item-wrapper">
                     <div class="team__item"><img class="rounded-circle team__item-img" src="img/pp.jfif">
                         <div class="team__item-title"><span><br>Малаева Нияз Бейсенович<br><br></span></div>
@@ -212,7 +214,9 @@ setlocale(LC_ALL,'ru_RU.utf8');
                         <br><br>
                     </p>
                 </div>
-                <div><a class="about__button" href="<?= Url::to(['site/about']) ?>">Узнать больше</a></div>
+                <div>
+                    <a class="about__button" href="<?= Url::to(['site/about']) ?>">Узнать больше</a>
+                </div>
             </div>
         </div>
     </div>
@@ -256,27 +260,77 @@ setlocale(LC_ALL,'ru_RU.utf8');
         </div>
     </div>
 </div>
+<section class="locations">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>
+                    Гоеграфия общества
+                </h2>
+                <ul>
+                    <li>Нур-Султан</li>
+                    <li>Алматы</li>
+                    <li>Шымкент</li>
+                    <li>Усть-Каменогорск</li>
+                    <li>Караганда</li>
+                    <li>Уральск</li>
+                    <li>Актобе</li>
+                    <li>Актау</li>
+                    <li>Тараз</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Подпишитесь</h2>
+                <p>
+                    на новости и события общества
+                </p>
+                <div class="locations-subscribe">
+                    <form id="location-subscribe-form">
+                        <div class="locations-subscribe__content">
+                            <div class="locations-subscribe__text">
+                                Оставайтесь на связи с нами и будьте в курсе всех последних событий Общества. Мы будем рады рассказать Вам обо всех интересных новостях!
+                            </div>
+                            <br>
+                            <input class="form-control" type="email" maxlength="255" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="app-button">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <?php
 
 $js =<<<JS
 $(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    responsiveClass:true,
-    responsive: {
-        0: {
-            items: 1
-        },
-        768: {
-            items: 4
-        },
-        1200: {
-            items: 8
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsiveClass:true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 4
+            },
+            1200: {
+                items: 8
+            }
         }
-    }
-  });
+    });
+});
+
+$('#location-subscribe-form').on('submit', function(e) {
+    e.preventDefault();
+    Swal.fire(
+      'Успех',
+      'Вы успешно подписаны!',
+      'success'
+    );
+    return false;
 });
 JS;
 
