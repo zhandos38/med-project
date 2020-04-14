@@ -6,6 +6,7 @@ use Exception;
 use Yii;
 use common\models\Presentation;
 use backend\models\PresentationSearch as PresentationSearch;
+use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -24,6 +25,15 @@ class PresentationController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin']
+                    ]
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -67,6 +77,7 @@ class PresentationController extends Controller
      * Creates a new Presentation model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
+     * @throws Exception
      */
     public function actionCreate()
     {

@@ -25,11 +25,10 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'except' => ['login', 'error'],
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['viewAdminIndex']
+                        'roles' => ['admin']
                     ]
                 ],
             ],

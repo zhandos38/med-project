@@ -1078,7 +1078,7 @@
   left: 160px;
   right: 0;
   bottom: 0;
-  height: 173px;
+  height: inherit;
   width: 195px;
   border-radius: 0px 0px 11px 0px;
   background: url(/img/word-doc-icon.png) no-repeat;
